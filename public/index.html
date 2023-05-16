@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.cdnfonts.com/css/itc-franklin-gothic-std?styles=15775,15779,15780,15776,15778,15781,15790,15792,15791,15793,15783,15785,15787,15782,15784,15786,15788,15789" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="pdfCSS"></div>
+    <main class="calculator-outer">
+      <div class="page-center">
+        <div class="calculator-inner">
+          <div class="calculator-filter-wrap">
+            <div class="calculator-logo">
+              <a href="">
+                <img src="./Images/EnPak Logo.png" />
+              </a>
+            </div>
+            <div class="calculator-filter">
+              <ul>
+                <li class="tab1 tab-active">LIFE CYCLE COSTS CALCULATOR</li>
+                <li class="tab2">OPERATION PROFILE</li>
+                <li class="tab3">FUEL SAVINGS</li>
+                <li class="tab4">MAINTENANCE SAVINGS</li>
+                <li class="tab5">DETAILED SUMMARY</li>
+              </ul>
+            </div>
+          </div>
+          <div class="calculator-tab-content">
+            <div id="filter-tab" class="tab1" cat="abc"> <!-- Life Cycle Costs Calculator Tab -->
+              <div class="tab1-next-prev-wrapper next-prev-wrapper">
+                <div class="tab-next">
+                  <h3>NEXT</h3>
+                </div>
+              </div>
+              <h1>
+                <i>LIFE CYCLE COSTS <br />
+                  <span style="color: #0079c1">CALCULATOR</span>
+                </i>
+              </h1>
+              <h4>
+                EnPak has many important benefits surrounding fuel usage, maintenance costs, and asset life extension:
+              </h4>
+              <ul>
+                <li>
+                  EnPak can significantly reduce expensive truck engine maintenance costs such as exhaust after treatment, oil changes, filter replacements (fuel, air, oil, transmission), and wear on belts/hoses.
+                </li>
+                <li>
+                  EnPak runs with the truck turned off, so it can lower fuel use up to 30%.
+                </li>
+                <li>
+                  Extend asset life by reducing the truck's engine idle time by up to 75%.
+                </li>
+              </ul>
+              <p>
+                The results are intended to illustrate the possible fuel savings, maintenance savings, and asset life extension savings using EnPak and are based on user input. They do not constitute a proposal or a guarantee.
+              </p>
+              <div class="get-started">
+                <a href="#">GET STARTED</a>
+              </div>
+            </div>
+            <div id="filter-tab" class="tab2"> <!-- Operation Profile Tab -->  
+              <div class="tab2-next-prev-wrapper next-prev-wrapper">
+                <div class="tab-previous">
+                  <h3>BACK</h3>
+                </div>
+                <div class="tab-next">
+                  <h3>NEXT</h3>
+                </div>
+              </div>
+              <div class="stwo-inner">
+                <div class="stwo-heading">
+                  <h2>OPERATION PROFILE</h2>
+                </div>
+                <div class="stwo-heading-desc">
+                  <p>
+                    Please complete your profile and continue through the calculator to see the cost reductions that EnPak® A60 could bring to your operation. Enter the cost of fuel per gallon, operating days per year, and fleet size below, and this info will auto-populate on the proceeding pages.
+                  </p>
+                </div>
+                <div class="stwo-note">
+                  <p>
+                    <b>Note: All fields on this page are editable.</b>
+                  </p>
+                </div>
+                <div class="st-filter-one-outer sm__flex-column sm__items-center">
+                  <div class="st-filter-fuel-cost">
+                    <div class="st-filter-heading">
+                      <div class="st-f-h-icon">
+                        <img src="./Images/CoF.png" />
+                      </div>
+                      <div class="st-f-h-heading">
+                        <h5><b>Cost of Fuel</b></h5>
+                        <p>(per gallon)</p>
+                      </div>
+                    </div>
+                    <div class="st-filter-one-input">
+                      <div class="st-filter-one-input-inner dollor">
+                        <input type="number" id="filter-1-price" name="filter-one-price" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();"  min="0" step="0.01">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="st-filter-operating-days">
+                    <div class="st-filter-heading">
+                      <div class="st-f-h-icon">
+                        <img src="./Images/OD.png" />
+                      </div>
+                      <div class="st-f-h-heading">
+                        <h5><b>Operating Days</b></h5>
+                        <p>(per year)</p>
+                      </div>
+                    </div>
+                    <div class="st-filter-one-input">
+                      <div class="st-filter-one-input-inner">
+                        <input class="zero-decimal" type="number" id="filter-1-days" name="filter-one-days" placeholder="#" min="0" oninput="fetch_cost();">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="st-filter-fleet-size">
+                    <div class="st-filter-heading">
+                      <div class="st-f-h-icon">
+                        <img src="./Images/FS.png" />
+                      </div>
+                      <div class="st-f-h-heading">
+                        <h5><b>Fleet Size</b></h5>
+                      </div>
+                    </div>
+                    <div class="st-filter-one-input">
+                      <div class="st-filter-one-input-inner">
+                        <input class="zero-decimal" type="number" id="filter-1-fleet-size" name="filter-one-fleet-size" placeholder="#" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="st-filter-two-outer">
+                  <div class="st-filter-two-inner xsm__flex-column">
+                    <div class="st-filter-two-truck-setup">
+                      <div class="st-filter-two-heading-wrapper-one">
+                        <div class="st-filter-two-heading">
+                          <h3>Truck with PTO</h3>
+                        </div>
+                        <div class="st-filter-two-icon">
+                          <img src="./Images/Help.png" />
+                          <div class="st-filter-two-truck-setup-extension">
+                            <div class="st-filter-two-truck-setup-ext-inner">
+                              <p>Truck with PTO includes:</p>
+                              <ul>
+                                <li>Truck</li>
+                                <li>Hydraulic pump/PTO</li>
+                                <li>Hydraulically driven air compressor</li>
+                                <li>Welder/generator</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="st-filter-two-inputs">
+                        <div class="st-filter-two-purchase-price sm__flex-column">
+                          <div class="st-filter-two-purchase-price-heading">
+                            <h5>Purchase Price</h5>
+                          </div>
+                          <div class="st-filter-two-purchase-price-input">
+                            <input class="zero-decimal" type="text" id="filter-2-purchase-price-ts" name="filter-two-purchase-price-ts" value="200,000" min="0" oninput="fetch_cost();maintenanceSavings();">
+                          </div>
+                        </div>
+                        <div class="st-filter-two-end-of-life sm__flex-column">
+                          <div class="st-filter-two-end-of-life-heading">
+                            <h5>End of Life Value</h5>
+                          </div>
+                          <div class="st-filter-two-end-of-life-input">
+                            <input class="zero-decimal" type="text" id="filter-2-end-of-life-ts" name="filter-two-end-of-life-ts" value="50,000" min="0" oninput="fetch_cost();maintenanceSavings();">
+                          </div>
+                        </div>
+                        <div class="st-filter-two-life-cycle sm__flex-column">
+                          <div class="st-filter-two-life-cycle-heading">
+                            <h5>Life Cycle</h5>
+                            <p>(Years)</p>
+                          </div>
+                          <div class="st-filter-two-life-cycle-input">
+                            <input type="number" class="zero-decimal" id="filter-2-life-cycle-ts" name="filter-two-life-cycle-ts" value="10" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="st-filter-two-truck-encap">
+                      <div class="st-filter-two-heading-wrapper-two">
+                        <div class="st-filter-two-heading">
+                          <h3>Truck with EnPak<sup>®</sup></h3>
+                        </div>
+                        <div class="st-filter-two-icon">
+                          <img src="./Images/Help.png" />
+                          <div class="st-filter-two-truck-setup-extension">
+                            <div class="st-filter-two-truck-setup-ext-inner">
+                              <p>EnPak includes fully integrated components:</p>
+                              <ul>
+                                <li>A 60 CFM Rotary Screw Compressor</li>
+                                <li>
+                                  A 20 GPM variable-displacement hydraulic pump
+                                </li>
+                                <li>
+                                  A 7,000-watt generator to power tools and welder
+                                </li>
+                                <li>A 325 amp integrated welder</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="st-filter-two-inputs">
+                        <div class="st-filter-two-purchase-price sm__flex-column">
+                          <div class="st-filter-two-purchase-price-heading">
+                            <h5>Purchase Price</h5>
+                          </div>
+                          <div class="st-filter-two-purchase-price-input">
+                            <input type="text" id="filter-2-purchase-price-te" name="filter-two-purchase-price-te" value="225,000" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();">
+                          </div>
+                        </div>
+                        <div class="st-filter-two-end-of-life sm__flex-column">
+                          <div class="st-filter-two-end-of-life-heading">
+                            <h5>End of Life Value</h5>
+                          </div>
+                          <div class="st-filter-two-end-of-life-input">
+                            <input class="zero-decimal" type="text" id="filter-2-end-of-life-te" name="filter-two-end-of-life-te" value="55,000" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();">
+                          </div>
+                        </div>
+                        <div class="st-filter-two-life-cycle sm__flex-column">
+                          <div class="st-filter-two-life-cycle-heading">
+                            <h5>Life Cycle</h5>
+                            <p>(Years)</p>
+                          </div>
+                          <div class="st-filter-two-life-cycle-input">
+                            <input class="zero-decimal" type="number" id="filter-2-life-cycle-te" name="filter-two-life-cycle-te" value="13" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-next">
+                <h3 class="button yellow" style="float: right;margin-top: 2rem;">NEXT</h3>
+              </div>
+            </div>
+            <div id="filter-tab" class="tab3"> <!-- Fuel Savings Tab -->
+              <div class="tab3-next-prev-wrapper next-prev-wrapper">
+                <div class="tab-previous">
+                  <h3>BACK</h3>
+                </div>
+                <div class="tab-next">
+                  <h3>NEXT</h3>
+                </div>
+              </div>
+              <h2>FUEL SAVINGS</h2>
+              <p>
+                This is a simplied profile of a typical day on site. We have reduced it to two operating conditions. You can change the number of hours and fuel consumption rate for your truck's operating condition.
+              </p>
+
+              <div class="st-filter-one-outer sm__flex-column">
+                <div class="st-filter-fuel-cost">
+                  <div class="st-filter-heading">
+                    <div class="st-f-h-icon">
+                      <img src="./Images/CoF.png" />
+                    </div>
+                    <div class="st-f-h-heading">
+                      <h5><b>Cost of Fuel</b></h5>
+                      <p>(per gallon)</p>
+                    </div>
+                  </div>
+                  <div class="st-filter-one-input">
+                    <div class="st-filter-one-input-inner fuel ">
+                      <input class="two-decimal" type="number" id="filter-1-price-two" name="filter-one-price" oninput="fetch_cost_new();change_first_screen();maintenanceSavings();" min="0" step="0.01">
+                    </div>
+                  </div>
+                </div>
+                <div class="st-filter-operating-days">
+                  <div class="st-filter-heading">
+                    <div class="st-f-h-icon">
+                      <img src="./Images/OD.png" />
+                    </div>
+                    <div class="st-f-h-heading">
+                      <h5><b>Operating Days</b></h5>
+                      <p>(per year)</p>
+                    </div>
+                  </div>
+                  <div class="st-filter-one-input">
+                    <div class="st-filter-one-input-inner">
+                      <input class="zero-decimal" type="number" id="filter-1-days-two" name="filter-one-days" placeholder="#" oninput="fetch_cost_new();change_first_screen();maintenanceSavings();" >
+                    </div>
+                  </div>
+                </div>
+                <div class="st-filter-fleet-size">
+                  <div class="st-filter-heading">
+                    <div class="st-f-h-icon">
+                      <img src="./Images/FS.png" />
+                    </div>
+                    <div class="st-f-h-heading">
+                      <h5><b>Fleet Size</b></h5>
+                    </div>
+                  </div>
+                  <div class="st-filter-one-input">
+                    <div class="st-filter-one-input-inner">
+                      <input class="zero-decimal" type="number" id="filter-1-fleet-size-two" name="filter-one-fleet-size" placeholder="#" oninput="fetch_cost_new();change_first_screen();maintenanceSavings();" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="fuel-calculation">
+                <div class="fuel-tab1">
+                  <div class="head-1">
+                    <h3>Operating Condition</h3>
+                  </div>
+                  <div class="head-2">
+                    <h3>Fuel Consumption Rate</h3>
+                    <p>(gallons/hour)</p>
+                  </div>
+                  <div class="head-3">
+                    <h3>Run Time</h3>
+                    <p>(hours/day)</p>
+                  </div>
+                  <div class="head-4">
+                    <h3>Savings</h3>
+                    <p>(year/truck)</p>
+                  </div>
+                </div>
+                <div class="fuel-tab2">
+                  <div class="sub-head1">
+                    <h3>Truck</h3>
+                    <p>High Speed, PTO engaged, full compressor output</p>
+                  </div>
+                  <div class="value1">
+                    <input class="two-decimal" type="number" id="truck-rate" name="truck-rate" value="1.75" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();" >
+                  </div>
+                  <div class="value2">
+                    <input type="number" id="truck-duration" name="truck-duration" value="5" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();" >
+                  </div>
+                  <div class="truck-savings">
+                    <p></p>
+                  </div>
+                </div>
+                <div class="fuel-tab3">
+                  <div class="sub-head2">
+                    <h3>EnPak® A60GBHW</h3>
+                    <p>
+                      Fully loaded at 2800 pm compressor 42 cfm @ 150 psi, 100% duty cycle
+                    </p>
+                  </div>
+                  <div class="value1">
+                    <p id="value1">1.17</p>
+                  </div>
+                  <div class="value2">
+                    <input type="number" id="enpak-duration" name="enpak-duration" value="4" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();" >
+                  </div>
+                  <div class="enpak-savings">
+                    <p id="enpak-savings"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="fuel-calculation-result">
+                <div class="annual-savings">
+                  <h4>Annual Savings</h4>
+                  <p id="annual_savings"></p>
+                </div>
+                <div class="annual-fleet">
+                  <h4>Annual Fleet Savings</h4>
+                  <p id="annual_fleet_savings" oninput="maintenanceSavings()" ></p>
+                </div>
+                <div class="lc-fleet">
+                  <h4>Life Cycle Fleet Savings</h4>
+                  <p id="life_cycle_fleet_savings"></p>
+                </div>
+              </div>
+              <div class="callout"">
+                <div class="payback-main-heading">
+                  <h4>Payback (Fuel Savings)</h4>
+                  <p><span id="pay-year"></span> years</p>
+                </div>
+              </div>
+              <div class="tab-next">
+                <h3 class="button yellow" style="float: right;margin: 2rem 0;">NEXT</h3>
+              </div>
+            </div>
+            <div id="filter-tab" class="tab4"> <!-- Maintenance Savings Tab -->
+              <div class="tab4-next-prev-wrapper next-prev-wrapper">
+                <div class="tab-previous">
+                  <h3>BACK</h3>
+                </div>
+                <div class="tab-next">
+                  <h3>NEXT</h3>
+                </div>
+              </div>
+              <h2>MAINTENANCE SAVINGS</h2>
+              <p>
+                Significant reductions in truck engine idle hours and total engine hours will contribute to lower maintenance costs by extending the time between required maintenance intervals.
+              </p>
+              <div class="st-filter-one-outer sm__flex-column">
+                <div class="st-filter-fuel-cost">
+                  <div class="st-filter-heading">
+                    <div class="st-f-h-icon">
+                      <img src="./Images/OD.png" />
+                    </div>
+                    <div class="st-f-h-heading">
+                      <h5><b>Operating Days</b></h5>
+                      <p>(per year)</p>
+                    </div>
+                  </div>
+                  <div class="st-filter-one-input">
+                    <div class="st-filter-one-input-inner">
+                      <input class="zero-decimal" type="number" id="filter-1-price-three" name="filter-one-price" placeholder="#" oninput="change_thrid_screen();fetch_cost_new();" >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="st-filter-fleet-size">
+                  <div class="st-filter-heading">
+                    <div class="st-f-h-icon">
+                      <img src="./Images/FS.png" />
+                    </div>
+                    <div class="st-f-h-heading">
+                      <h5><b>Fleet Size</b></h5>
+                    </div>
+                  </div>
+                  <div class="st-filter-one-input">
+                    <div class="st-filter-one-input-inner">
+                      <input class="zero-decimal" type="number" id="filter-1-fleet-size-three" name="filter-one-fleet-size" placeholder="#" oninput="change_thrid_screen();" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-four-two-cards">
+                <div class="tf-cards-outer sm__flex-column">
+                  <div class="tf-card-one-cts">
+                    <div class="cts-card-one-heading">
+                      <div class="st-filter-two-heading-wrapper-one">
+                        <div class="st-filter-two-heading">
+                          <h3>Truck with PTO</h3>
+                        </div>
+                        <div class="st-filter-two-icon">
+                          <img src="./Images/Help.png">
+                          <div class="st-filter-two-truck-setup-extension" style="min-height: 0px;">
+                            <div class="st-filter-two-truck-setup-ext-inner">
+                              <p>Truck with PTO includes:</p>
+                              <ul>
+                                <li>Truck</li>
+                                <li>Hydraulic pump/PTO</li>
+                                <li>Hydraulically driven air compressor</li>
+                                <li>Welder/generator</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="cts-card-one-row-one xsm__flex-column">
+                      <div class="cts-cone-rone-title">
+                        <h5>Preventive Maintenance</h5>
+                        <p>
+                          Oil Change, fuel filter, air filter
+                        </p>
+                      </div>
+                      <div class="cts-cone-rone-input-one">
+                        <p><b>Interval</b> (hours)</p>
+                        <input class="zero-decimal" type="number" id="conventional_preventive_maintenance" name="cts-cone-rone-interval" value="480" oninput="fetch_cost();fetch_cost_new();maintenanceSavings()" >
+                      </div>
+                      <div class="cts-cone-rone-input-two">
+                        <p><b>&nbsp;Costs&nbsp;</b> (USD)</p>
+                        <input class="zero-decimal" type="number" id="preventive_main_cost" name="cts-cone-rone-costs" value="500" oninput="fetch_cost();fetch_cost_new();maintenanceSavings()" >
+                      </div>
+                    </div>
+                    <div class="cts-card-one-row-two xsm__flex-column">
+                      <div class="cts-cone-rtwo-title">
+                        <h5>Emissions Systems Related Equipment</h5>
+                        <p>
+                          DEF (diesel exhaust fluid) and DPF (diesel particulate filter)
+                        </p>
+                      </div>
+                      <div class="cts-cone-rtow-input-one">
+                        <p><b>Interval</b> (hours)</p>
+                        <input class="zero-decimal" type="number" id="conventional_emmission_interval" name="cts-cone-rtwo-interval" placeholder="#" value="" min="0" oninput="fetch_cost();fetch_cost_new();maintenanceSavings()" >
+                      </div>
+                      <div class="cts-cone-rtwo-input-two">
+                        <p><b>&nbsp;Costs&nbsp;</b> (USD)</p>
+                        <input class="zero-decimal" type="number" id="emissions_equipment" name="cts-cone-rtwo-costs" placeholder="$" oninput="maintenanceSavings();" min="0" value="" >
+                      </div>
+                    </div>
+                    <div class="cts-card-one-row-three">
+                      <div class="cts-cone-rthree-title">
+                        <h4>Total Maintenance Costs at Idle</h4>
+                      </div>
+                      <div class="cts-cone-rthree-cost">
+                        <p id="cost-idle_truck"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tf-card-two-te">
+                    <div class="st-filter-two-heading-wrapper-two">
+                      <div class="st-filter-two-heading">
+                        <h3>Truck with EnPak<sup>®</sup></h3>
+                      </div>
+                      <div class="st-filter-two-icon">
+                        <img src="./Images/Help.png" />
+                        <div class="st-filter-two-truck-setup-extension">
+                          <div class="st-filter-two-truck-setup-ext-inner">
+                            <p>EnPak includes fully integrated components:</p>
+                            <ul>
+                              <li>A 60 CFM Rotary Screw Compressor</li>
+                              <li>
+                                A 20 GPM variable-displacement hydraulic pump
+                              </li>
+                              <li>
+                                A 7,000-watt generator to power tools and welder
+                              </li>
+                              <li>A 325 amp integrated welder</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cts-card-two-row-one sm__flex-column">
+                      <div class="cts-cone-rone-title">
+                        <h5>Preventive Maintenance</h5>
+                        <p>
+                          Oil Change, fuel filter, air filter
+                        </p>
+                      </div>
+                      <div class="cts-cone-rone-input-one">
+                        <p><b>Interval</b> (hours)</p>
+                        <input class="zero-decimal" type="number" id="enpack_preventive_main_interval" name="cts-cone-rone-interval" value="100" oninput="maintenanceSavings();fetch_cost_new()" >
+                      </div>
+                      <div class="cts-cone-rone-input-two ">
+                        <p><b>&nbsp;Costs&nbsp;</b> (USD)</p>
+                        <input class="zero-decimal" type="number" id="enpack_main_cost" name="cts-cone-rone-costs" value="160" oninput="maintenanceSavings();fetch_cost_new()" >
+                      </div>
+                    </div>
+                    <div class="cts-card-two-row-two sm__flex-column">
+                      <div class="cts-cone-rtwo-title">
+                        <h5>Emissions Systems Related Equipment</h5>
+                        <p>
+                          DEF (diesel exhaust fluid) and DPF (diesel particulate filter)
+                        </p>
+                      </div>
+                      <div class="cts-cone-rtow-input-one">
+                        <p><b>Interval</b> (hours)</p>
+                        <input class="zero-decimal" type="number" id="enpack_emi_interval_hour" name="cts-cone-rtwo-interval" value="0" readonly style="background-color: #dae1e4" oninput="maintenanceSavings();fetch_cost_new()" >
+                      </div>
+                      <div class="cts-cone-rtwo-input-two">
+                        <p><b>&nbsp;Costs&nbsp;</b> (USD)</p>
+                        <input class="zero-decimal" type="number" id="enpack_emission_cost" name="cts-cone-rtwo-costs" style="background-color: #dae1e4" oninput="maintenanceSavings()" value="0" readonly oninput="maintenanceSavings();fetch_cost_new()" >
+                      </div>
+                    </div>
+                    <div class="cts-card-two-row-three">
+                      <div class="cts-cone-rthree-title">
+                        <h4>Total Maintenance Costs at Idle</h4>
+                      </div>
+                      <div class="cts-cone-rthree-cost">
+                        <p id="enpack-idle"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fuel-calculation-result">
+                <div class="annual-savings">
+                  <h4>Annual Savings</h4>
+                  <p id="main_annual_savings"></p>
+                </div>
+                <div class="annual-fleet">
+                  <h4>Annual Fleet Savings</h4>
+                  <p id="main_annual_fleet_savings" oninput="maintenanceSavings()" ></p>
+                </div>
+                <div class="lc-fleet">
+                  <h4>Life Cycle Fleet Savings</h4>
+                  <p id="main_life_cycle_fleet_savings"></p>
+                </div>
+              </div>
+              <div class="callout"">
+                <div class="payback-main-heading">
+                  <h4>Payback (Maintenance)</h4>
+                  <p><span id="pay-fuel"></span> years</p>
+                </div>
+              </div>
+              <div class="detailed-summary-button">
+                <button id="detailed-summmary">VIEW DETAILED SUMMARY</button>
+              </div>
+            </div>
+            <div id="filter-tab" class="tab5"> <!-- Detailed Summary Tab -->
+              <div class="tab5-next-prev-wrapper next-prev-wrapper">
+                <div class="tab-previous">
+                  <h3 id="tab-prev-last">BACK</h3>
+                </div>
+              </div>
+              <div class="sfive-inner" id="bg-hide">
+                <div class="sfive-heading">
+                  <h2>DETAILED SUMMARY</h2>
+                </div>
+                <div class="sfive-heading-desc">
+                  <p>
+                    This is a summary of one possible scenario when using the EnPak® A60 in your fleet. The summary combines your fuel + maintenance savings and spreads the data across your fleet of trucks. It also offers a summary of life extension savings potential by using EnPak.
+                  </p>
+                </div>
+                <div class="sf-filter-one-outer">
+                  <div class="sf-filter-one-inner">
+                    <div class="sf-filter-one-heading">
+                      <h3>OPERATIONAL SAVINGS</h3>
+                    </div>
+                    <div class="sf-filter-one-column-one">
+                      <div class="sf-fo-column-one-row-one"></div>
+                      <div class="sf-fo-column-one-row-two">
+                        <h5>Annual Savings</h5>
+                        <p>(Per Truck)</p>
+                      </div>
+                      <div class="sf-fo-column-one-row-three">
+                        <h5>Annual Savings</h5>
+                        <p>(Fleet)</p>
+                      </div>
+                      <div class="sf-fo-column-one-row-four">
+                        <h5>Life Cycle Savings</h5>
+                        <p>(Fleet)</p>
+                      </div>
+                      <div class="sf-fo-column-one-row-five">
+                        <h5>Payback</h5>
+                        <p>(Years)</p>
+                      </div>
+                    </div>
+                    <div class="sf-filter-one-column-two">
+                      <div class="sf-fo-column-two-row-one">
+                        <h5>Fuel Savings</h5>
+                      </div>
+                      <div class="sf-fo-column-two-row-two">
+                        <p id="de_fuel_annual_save"></p>
+                      </div>
+                      <div class="sf-fo-column-two-row-three">
+                        <p id="de_fuel_annual_fleet_save"></p>
+                      </div>
+                      <div class="sf-fo-column-two-row-four">
+                        <p id="de_fuel_ife-save"></p>
+                      </div>
+                      <div class="sf-fo-column-two-row-five">
+                        <p id="de_fuel_payback"></p>
+                      </div>
+                    </div>
+                    <div class="sf-filter-one-column-three">
+                      <div class="sf-fo-column-three-row-one">
+                        <h5>Maintenance Savings</h5>
+                      </div>
+                      <div class="sf-fo-column-three-row-two">
+                        <p id="de_main_annual_save"></p>
+                      </div>
+                      <div class="sf-fo-column-three-row-three">
+                        <p id="de_main_fleet_annual_save"></p>
+                      </div>
+                      <div class="sf-fo-column-three-row-four">
+                        <p id="de_main_life-save"></p>
+                      </div>
+                      <div class="sf-fo-column-three-row-five">
+                        <p id="de_main_payback"></p>
+                      </div>
+                    </div>
+                    <div class="sf-filter-one-column-four">
+                      <div class="sf-fo-column-four-row-one">
+                        <h5>Total Operational Savings</h5>
+                      </div>
+                      <div class="sf-fo-column-four-row-two">
+                        <p id="total_annual_savings"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-four-row-three">
+                        <p id="total-fleet_savings"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-four-row-four">
+                        <p id="total_life_savings"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-four-row-five">
+                        <p id="total_payback_year"><b></b></p>
+                      </div>
+                    </div>
+                    <div class="sf-filter-one-column-five">
+                      <div class="sf-fo-column-five-row-one">
+                        <h5>Asset Life Extension Savings</h5>
+                      </div>
+                      <div class="sf-fo-column-five-row-two">
+                        <p id="assest_annual_per_result"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-five-row-three">
+                        <p id="assest-annual_fleet_size_calc"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-five-row-four">
+                        <p id="assest_life_cycle_row"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-five-row-five">
+                        <p id="assest_payback_year"><b></b></p>
+                      </div>
+                    </div>
+                    <div class="sf-filter-one-column-six sm__flex-column">
+                      <div class="sf-fo-column-six-row-one">
+                        <h5>Total Potential Savings</h5>
+                      </div>
+                      <div class="sf-fo-column-six-row-two">
+                        <div class="mobile"><span>Annual Savings (Per Truck)</span></div>
+                        <p id="pot_annual_save_truck"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-six-row-three">
+                        <div class="mobile"><span>Annual Savings (Fleet)</span></div>
+                        <p id="pot_annual_save_fleet"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-six-row-four">
+                        <div class="mobile"><span>Life Cycle Savings (Fleet)</span></div>
+                        <p id="pot_life_savings"><b></b></p>
+                      </div>
+                      <div class="sf-fo-column-six-row-five">
+                        <div class="mobile"><span>Payback (Years)</span></div>
+                        <p id="pot_pay_year"><b></b></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sf-button-section">
+                  <div class="sf-button-section-inner" id="email-download-hide">
+                    <div class="sf-button-two arrow" onclick="Convert_HTML_To_PDF();">
+                      <a href="#">DOWNLOAD AS A PDF</a>
+                    </div>
+                    <form id="sales-form">
+                      <input type="submit" class="arrow button blue" value="TALK TO SALES ❯" id="sales-form-button" onsubmit="secondSubmit()">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="print-close-wrapper">
+                <div class="print" onclick="printFunction()">
+                  <h4>PRINT</h4>
+                </div>
+
+                <div class="close">
+                  <h4>CLOSE</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup" id="summary-form">
+        <div class="wrapper">
+          <button class="close-popup" aria-label="close">X</button>
+          <h2>For a detailed summary, please submit your contact information</h2>
+          <form id="detail-form">
+            <div class="two-column">
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" name="firstname" required>
+
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" name="lastname" required>
+            </div>
+            <div class="one-column">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="emailaddress1" required>
+            </div>                   
+            <div class="one-column">
+              <label for="company">Company:</label>
+              <input type="text" id="company" name="companyname" required>
+            </div>           
+            <div class="one-column">
+              <label for="city">City:</label>
+              <input type="text" id="city" name="address1_city" required>
+            </div>              
+            <div class="one-column">
+              <label for="state">State:</label>
+              <input type="text" id="state" name="address1_stateorprovince" required>
+            </div>                    
+            <div class="one-column">
+              <label for="country">Country:</label>
+              <input type="text" id="country" name="address1_country" required>
+            </div>       
+            <div class="one-column">
+              <label for="phone-number">Phone Number:</label>
+              <input type="text" id="phone-number" name="telephone1" required>
+            </div>       
+            <div class="one-column">
+              <input type="submit" value="VIEW DETAILED SUMMARY ❯" class="button yellow">
+            </div>
+          </form>        
+          <!-- <iframe src="https://millerwelds.az1.qualtrics.com/jfe/form/SV_23PtacSKPKH3vG6" height="800px" width="500px" loading="lazy"></iframe> -->
+        </div>
+      </div>
+      <div class="popup" id="sales-form-message">
+        <div class="wrapper">
+          <button class="close-popup" aria-label="close">X</button>
+          <p>Thank you for your request. Your local territory manager will be in contact with you shortly.</p>   
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <!-- TRAIL PDF LINK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <!-- <script src="dist/jspdf.umd.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js" integrity="sha512-Bw9Zj8x4giJb3OmlMiMaGbNrFr0ERD2f9jL3en5FmcTXLhkI+fKyXVeyGyxKMIl1RfgcCBDprJJt4JvlglEb3A==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <!-- trail pdf link ends -->
+    <script>
+      window.jsPDF = window.jspdf.jsPDF;
+
+      // Convert HTML content to PDF
+      function Convert_HTML_To_PDF() {
+
+        // Modify style for creating PDF
+        let pdfCSS = document.getElementById('pdfCSS');
+        pdfCSS.innerHTML = `
+        <style>
+          #bg-hide,
+          .sf-fo-column-two-row-two,
+          .sf-fo-column-two-row-four {
+            background: transparent;
+          }
+
+          .sfive-heading h2,
+          .sf-filter-one-heading h3 {
+            letter-spacing: 10px;
+          }
+
+          .sfive-heading h2,
+          .sf-filter-one-heading h3,
+          .sf-fo-column-two-row-one h5,
+          .sf-fo-column-three-row-one h5,
+          .sf-fo-column-four-row-one h5,
+          .sf-fo-column-five-row-one h5 {
+            font-weight: 900;
+          }
+
+          .sf-fo-column-two-row-one h5,
+          .sf-fo-column-three-row-one h5,
+          .sf-fo-column-four-row-one h5,
+          .sf-fo-column-six-row-two p,
+          .sf-fo-column-six-row-three p,
+          .sf-fo-column-six-row-four p,
+          .sf-fo-column-five-row-one h5,
+          .sf-fo-column-six-row-one h5,
+          .sf-fo-column-six-row-five p { 
+            font-size: 1rem;
+          }
+
+          #email-download-hide {
+            display: none;
+          }
+        </style>`;
+
+        // Create PDF of Document
+        var doc = new jsPDF();
+        // Source HTMLElement or a string containing HTML.
+        var elementHTML = document.querySelector(".sfive-inner");
+        doc.html(elementHTML, {
+          callback: function (doc) {
+            // Save the PDF
+            doc.save("document-file.pdf");
+            // Reset Style
+            pdfCSS.innerHTML = '';
+          },
+          margin: [5, 5, 5, 5],
+          autoPaging: "text",
+          x: 25,
+          y: 25,
+          width: 150, //target width in the PDF document
+          windowWidth: 1100, //window width in CSS pixels
+        });
+
+      }
+
+    </script>
+    <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.js"></script>
+    <script src="Script.js"></script>
+  </body>
+</html>

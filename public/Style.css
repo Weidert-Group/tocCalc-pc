@@ -1,0 +1,2091 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile {
+  display: none;
+}
+
+.calculator-outer {
+  padding: 2rem 0;
+  background-color: #d2d4d7;
+}
+
+.page-center {
+  max-width: 84.6vw;
+  margin: 0 auto;
+}
+.calculator-filter ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.calculator-outer .calculator-inner {
+  border-radius: 1.95vw;
+  background-color: #e4e9eb;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.calculator-inner .calculator-filter-wrap {
+  flex: 0 23%;
+}
+
+.calculator-inner .calculator-tab-content {
+  flex: 0 77%;
+  background-color: #dae1e4;
+  min-height: 800px;
+  position: relative;
+  border-top-right-radius: 1.95vw;
+  border-bottom-right-radius: 1.95vw;
+}
+
+.calculator-tab-content #filter-tab {
+  padding: 0 2rem;
+}
+
+.calculator-filter li {
+  padding: 2rem 4.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  position: relative;
+  border-top: 1px solid #c8d1d6;
+  border-bottom: 0.5px solid #c8d1d6;
+}
+
+.calculator-filter li:before {
+  content: "";
+  background-color: #0079c1;
+  height: 2rem;
+  width: 0.65vw;
+  transform: skew(-20deg);
+  position: absolute;
+  left: 2.25rem;
+}
+.calculator-filter li:last-child:before {
+  background-color: #007f3b;
+}
+.calculator-filter li.tab-active {
+  background-color: #dae1e4;
+  border: unset;
+}
+
+.fuel-tab1,
+.fuel-tab2,
+.fuel-tab3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.fuel-tab1 .head-1 {
+  flex: 0 30%;
+  text-align: center;
+}
+
+.fuel-tab1 .head-2 {
+  flex: 0 30%;
+  text-align: center;
+}
+
+.fuel-tab1 .head-3 {
+  flex: 0 20%;
+  text-align: center;
+}
+
+.fuel-tab1 .head-4 {
+  flex: 0 20%;
+  text-align: center;
+}
+
+.fuel-tab1 .head-1 h3 {
+  padding: 1rem 0;
+}
+.fuel-tab1 .head-2 h3,
+.fuel-tab1 .head-3 h3,
+.fuel-tab1 .head-4 h3 {
+  padding-top: 1rem;
+}
+
+#filter-tab .fuel-calculation {
+  background-color: #e4e9eb;
+  border-radius: 0.65vw;
+}
+.fuel-tab1 h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.fuel-tab1 p {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+.sub-head1 h3,
+.sub-head2 h3 {
+  margin: 0;
+  padding: 1rem 2rem 0;
+  font-size: 1.5rem;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+}
+.sub-head1 p,
+.sub-head2 p {
+  margin: 0;
+  padding: 0.5rem 2rem 1.5rem;
+  font-size: 1rem;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.fuel-tab2 .sub-head1 {
+  flex: 0 30%;
+  min-height: 10.78vh;
+}
+.fuel-tab2 .value1 {
+  flex: 0 30%;
+  min-height: 10.78vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuel-tab2 .value2,
+.fuel-tab2 .truck-savings {
+  min-height: 10.78vh;
+  flex: 0 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuel-tab3 .value1 p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.fuel-tab2 .truck-savings {
+  border: none;
+}
+.fuel-tab3 .sub-head2 {
+  flex: 0 29%;
+}
+.fuel-tab3 {
+  border-radius: 0vh 0vh 0.65vw 0.65vw;
+  border: 3px solid #00833d;
+}
+.fuel-tab3 .value1 {
+  flex: 0 30%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuel-tab3 .value2,
+.fuel-tab3 .enpak-savings {
+  flex: 0 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuel-tab3 .enpak-savings {
+  border: none;
+}
+.truck-savings p,
+.enpak-savings p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+.fuel-calculation .fuel-tab1 {
+  border-top-left-radius: 1.4vh;
+  border-top-right-radius: 1.4vh;
+}
+.fuel-tab1 .head-1 {
+  background-color: #0079c1;
+  border-top-left-radius: 1.4vh;
+}
+.fuel-tab1 .head-2 {
+  background-color: #056ca9;
+}
+.fuel-tab1 .head-3 {
+  background-color: #0079c1;
+}
+.fuel-tab1 .head-4 {
+  background-color: #00833d;
+  border-top-right-radius: 1.4vh;
+}
+#filter-tab .fuel-calculation-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+#filter-tab .fuel-calculation-result > div {
+  text-align: center;
+  color: #000;
+  width: 30%;
+}
+.fuel-calculation-result .annual-fleet {
+  border-left: 2px solid;
+}
+.fuel-calculation-result .lc-fleet {
+  background-color: #e3e9ec;
+  border-radius: 0.65vw;
+  box-shadow: 5px 5px 20px -4px rgb(0 0 0 / 35%);
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.fuel-calculation input {
+  width: 80%;
+  outline: 0;
+  border: none;
+  background-color: #c8d1d6;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  border-radius: 0.32vw;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tab1 h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 800;
+  padding: 0.5rem 0 1rem;
+}
+
+.tab1 h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 800;
+  padding: 2rem 0 1rem;
+}
+.tab1 ul li::marker {
+  color: #0079c1;
+}
+.tab1 ul li {
+  list-style: square;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.tab1 p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding: 0 0 1.5rem;
+}
+
+.get-started {
+  padding-top: 4rem;
+}
+
+.get-started a,
+.button.yellow {
+  text-decoration: none;
+  padding: 1rem 2rem 0.5rem;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #f8a418;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  position: relative;
+  transition: 0.8s all;
+  border-radius: none;
+}
+
+.button.blue {
+  background-color: #0079c1;
+  color: #fff;
+  font-weight: 600;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.5rem;
+}
+
+.get-started a:after,
+.button.yellow:after {
+  content: "❯";
+  position: absolute;
+  right: 0.65vw;
+  transition: 0.8s all;
+}
+/*screen two styles*/
+
+.stwo-inner {
+  background-color: #dae1e4;
+  border-radius: 0vh 14vh 6.51vw 0vw;
+}
+.stwo-heading {
+  padding: 0.5rem 0 1rem;
+}
+.stwo-note {
+  padding: 1rem 0;
+}
+.st-filter-one-outer {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 1.3vw;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.st-filter-fuel-cost,
+.st-filter-operating-days,
+.st-filter-fleet-size {
+  flex: 0 31%;
+  border-radius: 1rem;
+  background-color: #e4e9eb;
+  box-shadow: 5px 5px 20px -4px rgb(0 0 0 / 35%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.st-filter-heading {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.st-f-h-icon {
+  flex: 0 10%;
+}
+.st-f-h-heading {
+  flex: 0 81%;
+}
+.st-filter-one-input {
+  padding: 0.5rem 1rem;
+  background-color: #d1d9dd;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+.st-filter-one-input-inner input#filter-1-price,
+.st-filter-one-input-inner input#filter-1-days,
+.st-filter-one-input-inner input#filter-1-fleet-size,
+.st-filter-one-input-inner input#filter-1-price-two,
+.st-filter-one-input-inner input#filter-1-days-two,
+.st-filter-one-input-inner input#filter-1-fleet-size-two {
+  background-color: #c8d1d6;
+  border: none;
+  width: 100%;
+  padding: 1rem 0.5rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.32vw;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-f-h-icon {
+  text-align: center;
+}
+.st-filter-one-input-inner input#filter-1-price:focus,
+.st-filter-one-input-inner input#filter-1-days:focus,
+.st-filter-one-input-inner input#filter-1-fleet-size:focus,
+.st-filter-two-purchase-price-input input#filter-2-purchase-price-ts:focus,
+.st-filter-two-purchase-price-input input#filter-2-purchase-price-te:focus,
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-ts:focus,
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-te:focus,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-ts:focus,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-te:focus {
+  outline: none;
+}
+.st-filter-one-outer {
+  padding-bottom: 1rem;
+}
+.st-filter-two-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.st-filter-two-truck-setup,
+.st-filter-two-truck-encap {
+  flex: 0 calc(50% - 10px);
+  border-radius: 1.5rem;
+  background-color: #f3f3f3;
+  box-shadow: 5px 5px 20px -4px rgba(0, 0, 0, 0.35);
+}
+.st-filter-two-heading-wrapper-one,
+.st-filter-two-heading-wrapper-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.st-filter-two-heading {
+  flex: 0 90%;
+  text-align: center;
+}
+
+.st-filter-two-icon {
+  flex: 0 10%;
+  text-align: center;
+}
+.st-filter-two-heading-wrapper-one {
+  background-color: #0079c1;
+  border-radius: 1rem 1rem 0 0;
+  padding: 1rem 0.5rem;  
+}
+.st-filter-two-heading-wrapper-two {
+  background-color: #00833d;
+  border-radius: 1rem 1rem 0 0;
+  padding: 1rem 0.5rem;
+}
+
+.st-filter-two-heading-wrapper-one,
+.st-filter-two-heading-wrapper-two {
+  position: relative;
+}
+
+.st-filter-two-heading-wrapper-one .st-filter-two-truck-setup-extension {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  background-color: #1784c5de;
+  transition: 0.8s all;
+  border-radius: 1rem 1rem 0 0;
+  left: 0;
+  z-index: 9999;
+}
+.st-filter-two-heading-wrapper-two .st-filter-two-truck-setup-extension {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  /* background-color: #1784c5c5; */
+  background-color: #00833dc5;
+  transition: 0.8s all;
+  border-radius: 1rem 1rem 0 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.st-filter-two-truck-setup-ext-inner {
+  padding: 5.6vh 3.9vw;
+}
+
+.st-filter-two-icon:hover .st-filter-two-truck-setup-extension {
+  visibility: visible;
+  top: 62px;
+  transition: 0.8s all;
+  border-radius: 0 0 1.75rem 1.75rem;
+}
+
+.st-filter-two-purchase-price,
+.st-filter-two-end-of-life,
+.st-filter-two-life-cycle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.st-filter-two-purchase-price,
+.st-filter-two-life-cycle {
+  background-color: #e4e9eb;
+}
+
+.st-filter-two-purchase-price-heading,
+.st-filter-two-purchase-price-input,
+.st-filter-two-end-of-life-heading,
+.st-filter-two-end-of-life-input,
+.st-filter-two-life-cycle-heading,
+.st-filter-two-life-cycle-input {
+  flex: 0 50%;
+  text-align: center;
+}
+
+.st-filter-two-life-cycle-heading {
+  text-align: left !important;
+}
+
+.st-filter-two-life-cycle {
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+.st-filter-two-end-of-life {
+  background-color: #dae1e4;
+}
+.st-filter-two-truck-setup-ext-inner ul {
+  padding-left: 1.3vw;
+  list-style: square;
+}
+
+/*------------------------Font-styles---------------------------------*/
+.stwo-heading h2,
+.stwo-heading-desc p,
+.stwo-note p,
+.st-f-h-heading h5,
+.st-f-h-heading p {
+  margin: 0;
+  font: 400 1rem "ITC Franklin Gothic Std", sans-serif;
+  color: #000;
+  line-height: 1.2;
+}
+
+.stwo-heading h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.stwo-heading-desc p {
+  line-height: 1.5;
+}
+
+.stwo-note p {
+  font-weight: 800;
+}
+
+.st-f-h-heading h5,
+.st-f-h-heading p {
+  display: inline-block;
+}
+
+.st-f-h-heading p {
+  padding-left: 5px;
+}
+
+.st-filter-one-input-inner input#filter-1-price::placeholder,
+.st-filter-one-input-inner input#filter-1-days::placeholder,
+.st-filter-one-input-inner input#filter-1-fleet-size::placeholder {
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-filter-two-heading h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #fff;
+  line-height: 0.9;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+}
+
+.st-filter-two-purchase-price-heading h5,
+.st-filter-two-end-of-life-heading h5,
+.st-filter-two-life-cycle-heading h5 {
+  margin: 0;
+  font: 600 1.5rem "ITC Franklin Gothic Std", sans-serif;
+  letter-spacing: 1px;
+  color: #000;
+  text-align: left;
+}
+
+.st-filter-two-life-cycle-heading h5 {
+  display: inline-block;
+}
+
+.st-filter-two-life-cycle-heading p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+/*-------------------------Font styles end-------------------------------------*/
+.tab3 h2 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  padding: 0.5rem 0 1rem;
+}
+.tab3 > p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding: 0.5rem 0 1rem;
+}
+
+.st-filter-two-purchase-price-input input#filter-2-purchase-price-ts,
+.st-filter-two-purchase-price-input input#filter-2-purchase-price-te,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-ts,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-te {
+  border: none;
+  text-align: center;
+  padding: 1rem 0.5rem 0.75rem;
+  box-sizing: border-box;
+  background-color: #dae1e4;
+  width: 100%;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-ts,
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-te {
+  background-color: #d1d9dd;
+  border: none;
+  text-align: center;
+  padding: 1rem 0.5rem 0.75rem;
+  color: #000;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-filter-two-purchase-price-input
+  input#filter-2-purchase-price-ts::placeholder,
+.st-filter-two-purchase-price-input
+  input#filter-2-purchase-price-te::placeholder,
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-ts::placeholder,
+.st-filter-two-end-of-life-input input#filter-2-end-of-life-te::placeholder,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-ts::placeholder,
+.st-filter-two-life-cycle-input input#filter-2-life-cycle-te::placeholder {
+  text-align: center;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-filter-two-truck-setup-ext-inner * {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.8;
+  text-align: left;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.st-filter-two-truck-setup-ext-inner p {
+  font-weight: 800;
+}
+
+.tf-cards-outer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tf-card-one-cts,
+.tf-card-two-te {
+  flex: 0 calc(50% - 15px);
+  box-shadow: 5px 5px 20px -4px rgb(0 0 0 / 35%);
+  border-radius: 0.97vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cts-card-one-row-one,
+.cts-card-two-row-one,
+.cts-card-one-row-two,
+.cts-card-two-row-two {
+  background-color: #e4e9eb;
+}
+.cts-card-one-row-three {
+  border-radius: 0vh 0vh 0.97vw 0.97vw;
+  border: 3px solid #0079c1;
+  background-color: #e4e9eb;
+}
+.cts-card-two-row-three {
+  border-radius: 0px 0px 0.97vw 0.97vw;
+  border: 3px solid #00833d;
+  background-color: #e4e9eb;
+}
+
+.cts-card-one-heading,
+.cts-card-two-heading {
+  text-align: center;
+  border-radius: 0.97vh 0.97vh 0vw 0vw;
+}
+.cts-card-one-row-one,
+.cts-card-one-row-two,
+.cts-card-two-row-one,
+.cts-card-two-row-two {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cts-cone-rone-title,
+.cts-cone-rtwo-title {
+  flex: 0 47%;
+}
+.cts-cone-rone-input-one,
+.cts-cone-rtow-input-one {
+  flex: 0 27%;
+  text-align: center;
+}
+.cts-cone-rone-input-two,
+.cts-cone-rtwo-input-two {
+  flex: 0 25%;
+  text-align: center;
+}
+.cts-cone-rone-input-one input,
+.cts-cone-rone-input-two input,
+.cts-cone-rtow-input-one input {
+  width: 5.85vw;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+}
+.cts-cone-rone-input-two input,
+.cts-cone-rtwo-input-two input {
+  width: 5.85vw;
+  text-align: center;
+  padding: 0.75rem 0vw;
+  font-size: 1rem;
+}
+.cts-cone-rone-title h5,
+.cts-cone-rtwo-title h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+}
+.cts-cone-rone-title p,
+.cts-cone-rtwo-title p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding-top: 5px;
+}
+.cts-cone-rone-input-one p,
+.cts-cone-rtow-input-one p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding: 0px 0px 5px;
+}
+.cts-cone-rone-input-two p,
+.cts-cone-rtow-input-two p,
+.cts-cone-rtwo-input-two p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding: 0px 0px 5px;
+}
+
+.cts-card-one-row-three,
+.cts-card-two-row-three {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cts-cone-rthree-title {
+  flex: 0 50%;
+}
+
+.cts-cone-rthree-cost {
+  flex: 0 50%;
+  text-align: center;
+}
+.cts-card-one-row-one,
+.cts-card-one-row-two,
+.cts-card-one-row-three,
+.cts-card-two-row-one,
+.cts-card-two-row-two,
+.cts-card-two-row-three{
+  padding: 0.75rem 2rem;
+}
+
+.tab4 h2 {
+  margin: 0;
+  font-size: 3rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  padding: 0.5rem 0 1rem;
+}
+.tab4 > p {
+  margin: 0;
+  color: #000;
+  padding: 0.5rem 0 0.75rem;
+  font: 400 1rem/1.5 "ITC Franklin Gothic Std", sans-serif;
+}
+.cts-card-one-heading h3,
+.cts-card-two-heading h3 {
+  margin: 0;
+  font: 600 1.5rem/1.2 "ITC Franklin Gothic Std", sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.cts-card-one-heading {
+  background-color: #0079c1;
+}
+.cts-card-two-heading {
+  background-color: #00833d;
+}
+.cts-cone-rone-input-one input,
+.cts-cone-rone-input-two input {
+  background-color: #dae1e4;
+  border: none;
+  border-radius: 0.32vw;
+}
+.cts-cone-rtow-input-one input,
+.cts-cone-rtwo-input-two input {
+  background-color: #d1d9dd;
+  border: none;
+  border-radius: 0.32vw;
+}
+.cts-cone-rthree-title h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  padding: 1.4vh 0vw;
+}
+.cts-cone-rthree-cost p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  padding: 1.4vh 0vw;
+}
+
+/*screen five---*/
+
+.sfive-inner {
+  background-color: #dae1e4;
+  border-radius: 0 100px 100px 0;
+}
+.sfive-heading {
+  padding: 0.5rem 0 1rem;
+}
+
+.sfive-heading-desc {
+  padding: 0.5rem 0;
+}
+.sf-filter-one-heading {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #0079c1;
+  border-radius: 2.1vh 2.1vh 0vw 0vw;
+}
+.sf-filter-one-column-one,
+.sf-filter-one-column-two,
+.sf-filter-one-column-three,
+.sf-filter-one-column-four,
+.sf-filter-one-column-five,
+.sf-filter-one-column-six {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sf-fo-column-one-row-one,
+.sf-fo-column-one-row-two,
+.sf-fo-column-one-row-three,
+.sf-fo-column-one-row-four,
+.sf-fo-column-one-row-five,
+.sf-fo-column-two-row-one,
+.sf-fo-column-two-row-two,
+.sf-fo-column-two-row-three,
+.sf-fo-column-two-row-four,
+.sf-fo-column-two-row-five {
+  flex: 0 20%;
+  text-align: center;
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sf-fo-column-three-row-one,
+.sf-fo-column-three-row-two,
+.sf-fo-column-three-row-three,
+.sf-fo-column-three-row-four,
+.sf-fo-column-three-row-five,
+.sf-fo-column-four-row-one,
+.sf-fo-column-four-row-two,
+.sf-fo-column-four-row-three,
+.sf-fo-column-four-row-four,
+.sf-fo-column-four-row-five,
+.sf-fo-column-five-row-one,
+.sf-fo-column-five-row-two,
+.sf-fo-column-five-row-three,
+.sf-fo-column-five-row-four,
+.sf-fo-column-five-row-five,
+.sf-fo-column-six-row-one,
+.sf-fo-column-six-row-two,
+.sf-fo-column-six-row-three,
+.sf-fo-column-six-row-four,
+.sf-fo-column-six-row-five {
+  flex: 0 20%;
+  text-align: center;
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sf-fo-column-one-row-one,
+.sf-fo-column-one-row-three,
+.sf-fo-column-one-row-five {
+  background-color: #dae1e4;
+}
+.sf-fo-column-one-row-two,
+.sf-fo-column-one-row-four {
+  background-color: #d1d9dd;
+}
+.sf-filter-one-inner {
+  box-shadow: 5px 5px 20px -4px rgb(0 0 0 / 35%);
+  border-radius: 0.97vw;
+}
+.sf-fo-column-two-row-one,
+.sf-fo-column-two-row-three,
+.sf-fo-column-two-row-five,
+.sf-fo-column-three-row-one,
+.sf-fo-column-three-row-three,
+.sf-fo-column-three-row-five,
+.sf-fo-column-four-row-one,
+.sf-fo-column-four-row-three,
+.sf-fo-column-four-row-five,
+.sf-fo-column-five-row-one,
+.sf-fo-column-five-row-three,
+.sf-fo-column-five-row-five {
+  background-color: #e4e9eb;
+}
+.sf-fo-column-two-row-two,
+.sf-fo-column-two-row-four {
+  background-color: #dae1e4;
+}
+.sf-filter-one-column-two:after {
+  content: "";
+  width: 90%;
+  height: 0.14vh;
+  position: absolute;
+  background-color: #a1b2b7;
+  bottom: 0vh;
+  right: 5%;
+}
+
+.sf-filter-one-column-two {
+  position: relative;
+}
+.sf-filter-one-column-four {
+  border-top: 3px solid #00833d;
+  border-left: 3px solid #00833d;
+  border-right: 3px solid #00833d;
+}
+.sf-filter-one-column-five {
+  border-right: 3px solid #00833d;
+  border-left: 3px solid #00833d;
+}
+.sf-filter-one-column-six {
+  border-radius: 0vh 0vh 0.97vw 0.97vw;
+  background-color: #00833d;
+}
+.sf-fo-column-six-row-two,
+.sf-fo-column-six-row-four {
+  background-color: #007f3b;
+}
+.sf-fo-column-four-row-two:after,
+.sf-fo-column-four-row-three:after,
+.sf-fo-column-four-row-four:after,
+.sf-fo-column-four-row-five:after {
+  content: "+";
+  color: #00833d;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  left: 48%;
+  bottom: -1.4vh;
+}
+
+.sf-fo-column-four-row-two,
+.sf-fo-column-four-row-three,
+.sf-fo-column-four-row-four,
+.sf-fo-column-four-row-five {
+  position: relative;
+}
+.sf-button-section-inner {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  column-gap: 1.3vw;
+  padding: 1rem 0 0;
+  align-items: center;
+}
+.sf-button-one {
+  flex: 0 32%;
+  text-align: center;
+  display: none;
+}
+.sf-button-two {
+  flex: 0 32%;
+  text-align: left;
+}
+.arrow a:after {
+  content: "❯";
+  position: absolute;
+  right: -1.62vw;
+  bottom: -0.28vh;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: 0.8s all;
+}
+
+/*--------------------------------------Font styles-------------------------------------------*/
+
+.sfive-heading h2 {
+  margin: 0;
+  font-size: 3rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.sfive-heading-desc p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.sf-filter-one-heading h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #fff;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.sf-fo-column-one-row-two h5,
+.sf-fo-column-one-row-three h5,
+.sf-fo-column-one-row-four h5,
+.sf-fo-column-one-row-five h5 {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 800;
+}
+/*--------for content-------*/
+.sf-fo-column-two-row-one h5,
+.sf-fo-column-three-row-one h5,
+.sf-fo-column-four-row-one h5,
+.sf-fo-column-five-row-one h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.sf-fo-column-six-row-one h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 800;
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+.sf-fo-column-one-row-two p,
+.sf-fo-column-one-row-three p,
+.sf-fo-column-one-row-four p,
+.sf-fo-column-one-row-five p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.sf-fo-column-two-row-two p,
+.sf-fo-column-two-row-three p,
+.sf-fo-column-two-row-four p,
+.sf-fo-column-two-row-five p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+/*------------for content-----------*/
+.sf-fo-column-three-row-two p,
+.sf-fo-column-three-row-three p,
+.sf-fo-column-three-row-four p,
+.sf-fo-column-three-row-five p,
+.sf-fo-column-four-row-two p,
+.sf-fo-column-four-row-three p,
+.sf-fo-column-four-row-four p,
+.sf-fo-column-four-row-five p,
+.sf-fo-column-five-row-two p,
+.sf-fo-column-five-row-three p,
+.sf-fo-column-five-row-four p,
+.sf-fo-column-five-row-five p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+.sf-fo-column-six-row-two p,
+.sf-fo-column-six-row-three p,
+.sf-fo-column-six-row-four p,
+.sf-fo-column-six-row-five p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+.sf-button-one a,
+.sf-button-two a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  position: relative;
+}
+
+.annual-savings h4 {
+  margin: 0px;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-bottom: 0.7vh;
+}
+
+.fuel-calculation-result p,
+.payback-main-heading p {
+  margin: 0px;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.payback-main-heading p {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.annual-fleet h4 {
+  margin: 0px;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-bottom: 0.7vh;
+}
+
+.annual-fleet p {
+  margin: 0px;
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+.fuel-calculation-result .lc-fleet h4 {
+  margin: 0px;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.lc-fleet p {
+  margin: 0px;
+  font-size: 1.5rem;
+  color: #00833d;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 800;
+}
+
+/* trail  */
+input#filter-1-price-three {
+  background-color: #c8d1d6;
+  border: none;
+  width: 100%;
+  padding: 1rem 1rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.32vw;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+input#filter-1-fleet-size-three {
+  background-color: #c8d1d6;
+  border: none;
+  width: 100%;
+  padding: 1rem 1rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.32vw;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #000;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+.annual-savings p:before,
+.annual-fleet p:before,
+.lc-fleet p:before {
+  content: "$";
+}
+
+.tab1-next h3 {
+  margin: 0px;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-size: 1.3vw;
+  line-height: 1.2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab1-next-prev-wrapper,
+.tab5-next-prev-wrapper {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+
+.tab-next {
+  padding-right: 0.65vw;
+}
+
+.previous {
+  padding-left: 0.65vw;
+}
+
+.tab2-next-prev-wrapper,
+.tab3-next-prev-wrapper,
+.tab4-next-prev-wrapper {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  right: 2%;
+  top: 3%;
+}
+
+.tab-next h3,
+.tab-previous h3 {
+  margin: 0px;
+  font-size: 1.5rem;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-previous {
+  padding-right: 0.65vw;
+}
+
+.fuel-calculation-result h4,
+.payback-main-heading h4 {
+  margin: 0px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  padding-bottom: 0.7vh;
+}
+
+.payback-main-heading h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.payback-heading h4 {
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  padding-bottom: 1.4vh;
+}
+
+.payback-fuel-year h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+.payback-main-year h4 {
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+.payback-fuel-outer,
+.payback-maintance-outer  {
+  background-color: #0079c1;
+  display: inline-block;
+  padding: 1.5rem 1rem;
+  border-radius: 0.65vw;
+  position: absolute;
+  left: calc(-25% - 3rem);
+  bottom: 0;
+  width: 25%;
+  text-align: center;
+}
+
+.calculator-inner {
+  position: relative;
+}
+
+.print h4 {
+  margin: 0px;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.close h4 {
+  margin: 0px;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.print {
+  background-color: #0079c1;
+  display: inline-block;
+  padding: 1rem 2rem 0.75rem;
+  cursor: pointer;
+  margin-right: 0.65vw;
+}
+
+.close {
+  background-color: #f8a418;
+  display: inline-block;
+  padding: 1rem 2rem 0.75rem;
+  cursor: pointer;
+}
+
+.print-close-wrapper {
+  position: absolute;
+  left: -27.5%;
+  bottom: 0;
+}
+
+.payback-fuel-year h4:after {
+  content: "years";
+  padding-left: 0.32vw;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.sf-fo-column-two-row-two p:before,
+.sf-fo-column-two-row-three p:before,
+.sf-fo-column-two-row-four p:before,
+.sf-fo-column-three-row-two p:before,
+.sf-fo-column-three-row-four p:before,
+.sf-fo-column-three-row-three p:before,
+.sf-fo-column-four-row-two p:before,
+.sf-fo-column-four-row-three p:before,
+.sf-fo-column-four-row-four p:before,
+.enpak-savings p::before,
+.cts-cone-rthree-cost p:before,
+.sf-fo-column-six-row-two p:before,
+.sf-fo-column-six-row-two p:before,
+.sf-fo-column-six-row-four p:before,
+.sf-fo-column-six-row-three p:before,
+.sf-fo-column-five-row-four p:before,
+.sf-fo-column-five-row-three p:before,
+.sf-fo-column-five-row-two p:before {
+  content: "$";
+}
+
+.print h4:after {
+  content: "❯";
+  position: absolute;
+  right: 50%;
+  left: 23%;
+}
+
+.close h4:after {
+  content: "❯";
+  padding-left: 0.32vw;
+  position: absolute;
+}
+
+.tab-next h3:after {
+  content: "❯";
+  padding-left: 0.65vw;
+}
+
+h3#tab-prev-last:before {
+  content: "❮";
+}
+
+.tab-previous h3:before {
+  content: "❮";
+  padding-right: 0.65vw;
+}
+
+.tab-previous-last h3 {
+  margin: 0px;
+  font-size: 1.3vw;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calculator-logo img {
+  width: 100%;
+}
+
+.dollor {
+  position: relative;
+}
+
+.dollor:before {
+  position: absolute;
+  content: "$";
+  left: 10%;
+  top: 1rem;
+  font-size: 1.5rem;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+
+.st-filter-two-purchase-price-input {
+  position: relative;
+}
+
+.st-filter-two-end-of-life-input {
+  position: relative;
+}
+
+.st-filter-two-purchase-price-input:before,
+.st-filter-two-end-of-life-input::before {
+  position: absolute;
+  content: "$";
+  top: 16px;
+  font-size: 1rem;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+
+.st-filter-two-purchase-price-input:before {
+  left: 10%;
+}
+
+.st-filter-two-end-of-life-input::before {
+  left: 10%;
+}
+
+.fuel {
+  position: relative;
+}
+
+.fuel:before {
+  position: absolute;
+  content: "$";
+  left: 10%;
+  top: 16px;
+  font-size: 1.5rem;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+
+.payback-main-year h4::after {
+  content: "years";
+  padding-left: 0.32vw;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+.st-f-h-icon img {
+  width: 100%;
+}
+.calculator-logo {
+  padding: 4rem;
+}
+
+.tab-next h3:before {
+  border-left: 1px solid red;
+}
+
+.detailed-summary-button {
+  text-align: center;
+}
+
+.detailed-summary-button button {
+  background-color: #0079c1;
+  color: #fff;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  padding: 1rem 2rem 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+button#sales-form-button {
+  background-color: #0079c1;
+  color: #fff;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  padding: 1rem 2rem 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+button#sales-form-button:after,
+.detailed-summary-button button:after {
+  content: "❯";
+  padding-left: 0.32vw;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+}
+
+.callout {
+  position: absolute;
+  bottom: 0;
+  left: calc(-25% - 2rem - 1.5%);
+  width: 25%;
+  background-color: #0079c1;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ------------------------------------------ popup module starts ---------------------------------- */
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  overflow: scroll;
+}
+
+.popup .wrapper {
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  position: relative;
+  border-radius: 1rem 0 1rem 1rem;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup .wrapper .close-popup {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  padding: 0.5rem;
+  height: 48px;
+  width: 48px;
+  background: #0079c1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------------------------------------------ popup module ends ---------------------------------- */
+
+/* ------------------------------------------ form starts ---------------------------------- */
+
+form .hidden input {
+  display: none;
+}
+
+.popup h2,
+form {
+  font-family: "ITC Franklin Gothic Std", sans-serif;
+  font-weight: 400;
+}
+
+form .one-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+form .one-column input {
+  width: 70%;
+}
+
+form .two-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+form input {
+  background-color: #dae1e4;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+form input[type='submit'] {
+  cursor: pointer;
+  border-radius: 0;
+  float: right;
+}
+
+/* ------------------------------------------ form ends ---------------------------------- */
+
+/*------------------------------------------ media query starts ----------------------------------*/
+@media screen and (max-width: 1350px) {
+  .sf-fo-column-two-row-one h5, 
+  .sf-fo-column-three-row-one h5, 
+  .sf-fo-column-four-row-one h5, 
+  .sf-fo-column-five-row-one h5 {
+    padding: 0.5rem;
+  }
+
+  .sf-fo-column-six-row-one h5 {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .calculator-outer .calculator-inner {
+    flex-direction: column;
+  }
+
+  #filter-tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .next-prev-wrapper {
+    position: relative;
+    justify-content: center;
+    padding: 1rem 0;
+    top: unset;
+    right: unset;
+  }
+
+  .next-prev-wrapper > div {
+    padding: 0 1rem;
+  }
+
+  .callout {
+    left: unset;
+  }
+
+  .calculator-inner .calculator-tab-content {
+    border-radius: 1.95vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile {
+    display: block;
+    color: #fff;
+    font-family: "ITC Franklin Gothic Std", sans-serif;
+  }
+
+  .mobile span {
+    display: block;
+    padding-bottom: 0.5rem;
+  }
+
+  .page-center {
+    max-width: 100%;
+  }
+
+  .sm__flex-column {
+    flex-direction: column !important;
+  }
+
+  .sm__flex-column > div {
+    width: 100%;
+  }
+
+  .sm__items-center {
+    align-items: center;
+  }
+
+  .sm__items-center > div {
+    width: 100%;
+  }
+
+  .st-filter-one-outer {
+    gap: 2rem;
+  }
+
+  .fuel-tab2,
+  .fuel-tab3 {
+    flex-wrap: wrap;
+  }
+
+  .fuel-tab1 > div:not(:first-child),
+  .fuel-tab2 > div:not(:first-child),
+  .fuel-tab3 > div:not(:first-child) {
+    flex: 1;
+  }
+
+  .fuel-tab2 > div:first-child,
+  .fuel-tab3 > div:first-child {
+    width: 100%;
+    flex: unset;
+  }
+
+  .sub-head1 p, .sub-head2 p {
+    padding: 0.5rem 2rem;
+  }
+
+  .head-1 {
+    display: none;
+  }
+
+  .head-2 {
+    border-top-left-radius: 1.4vh;
+  }
+
+  .fuel-calculation-result {
+    flex-direction: column;
+  }
+
+  #filter-tab .fuel-calculation-result > div {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .fuel-calculation-result .annual-fleet {
+    border: 0;
+  }
+
+  .tf-card-one-cts,
+  .tf-card-two-te {
+    margin-bottom: 1rem;
+  }
+
+  .tf-card-one-cts input,
+  .tf-card-two-te input {
+    width: 100%;
+  }
+
+  .callout {
+    position: relative;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .two-column label {
+    margin-top: 1rem;
+  }
+  
+  form .one-column,
+  form .two-column {
+    flex-direction: column;
+  }
+
+  form input{
+    width: 80%;
+  }
+
+  .sf-filter-one-column-one > div {
+    flex: 1;
+  }
+
+  .sf-fo-column-six-row-one h5 {
+    text-align: center;
+  }
+
+  .sf-filter-one-column-two,
+  .sf-filter-one-column-three,
+  .sf-filter-one-column-four,
+  .sf-filter-one-column-five,
+  .sf-filter-one-column-six {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sf-filter-one-column-two > div:first-child,
+  .sf-filter-one-column-three > div:first-child,
+  .sf-filter-one-column-four > div:first-child,
+  .sf-filter-one-column-five > div:first-child,
+  .sf-filter-one-column-six > div:first-child {
+    flex: unset;
+    width: 100%;
+  }
+
+  .sf-fo-column-one-row-one {
+    display: none;
+  }
+  
+  .sf-fo-column-four-row-two:after,
+  .sf-fo-column-four-row-three:after,
+  .sf-fo-column-four-row-four:after,
+  .sf-fo-column-four-row-five:after {
+    display: none;
+  }
+
+  .sf-fo-column-one-row-one, 
+  .sf-fo-column-one-row-two, 
+  .sf-fo-column-one-row-three, 
+  .sf-fo-column-one-row-four, 
+  .sf-fo-column-one-row-five, 
+  .sf-fo-column-two-row-one, 
+  .sf-fo-column-two-row-two, 
+  .sf-fo-column-two-row-three, 
+  .sf-fo-column-two-row-four, 
+  .sf-fo-column-two-row-five,
+  .sf-fo-column-three-row-one, 
+  .sf-fo-column-three-row-two, 
+  .sf-fo-column-three-row-three, 
+  .sf-fo-column-three-row-four, 
+  .sf-fo-column-three-row-five, 
+  .sf-fo-column-four-row-one, 
+  .sf-fo-column-four-row-two, 
+  .sf-fo-column-four-row-three, 
+  .sf-fo-column-four-row-four, 
+  .sf-fo-column-four-row-five, 
+  .sf-fo-column-five-row-one, 
+  .sf-fo-column-five-row-two, 
+  .sf-fo-column-five-row-three, 
+  .sf-fo-column-five-row-four, 
+  .sf-fo-column-five-row-five, 
+  .sf-fo-column-six-row-one, 
+  .sf-fo-column-six-row-two, 
+  .sf-fo-column-six-row-three, 
+  .sf-fo-column-six-row-four, 
+  .sf-fo-column-six-row-five {
+    flex: 1;
+  }
+
+  .sf-button-section-inner {
+    flex-direction: column;
+  }
+
+  .sf-button-two.arrow {
+    font-size: 1.5rem;
+  }
+
+  .sf-button-two.arrow:after {
+    right: unset;
+    padding-left: 5px;
+  }
+
+  .sf-button-two:after {
+    right: 0;
+    bottom: -3px;
+    padding-left: 5px;
+  }
+
+  #sales-form input[type="submit"] {
+    width: unset;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem 0.5rem;
+  }
+
+  .print-close-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left: unset;
+    bottom: unset;
+  }
+
+  .print {
+    margin: 1rem 0;
+  }
+
+  .print h4:after {
+    right: unset;
+    left: unset;
+    padding-left: 5px;
+  }
+
+  .sf-button-two a {
+    font-size: 1.5rem;
+  }
+
+  .arrow a:after {
+    right: unset;
+    padding-left: 5px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .xsm__flex-column {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .calculator-outer .calculator-inner {
+    padding: 0;
+  }
+}
+
+@media print {
+  html,
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: always;
+  }
+  .page-center {
+    max-width: 100%;
+  }
+  .sfive-heading h2 {
+    font-size: 2rem;
+  }
+  .sfive-heading-desc p {
+    font-size: 1rem;
+  }
+  .tab5 {
+    page-break-inside: avoid;
+    height: 500px;
+  }
+  .calculator-filter-wrap,
+  .print-close-wrapper,
+  #tab-prev-last,
+  .sf-button-section {
+    display: none;
+  }
+  .calculator-outer .calculator-inner {
+    display: block;
+  }
+  .calculator-tab-content {
+    flex: 0 100%;
+  }
+  .calculator-outer,
+  .calculator-tab-content #filter-tab {
+    padding-top: 5px;
+  }
+  .calculator-inner .calculator-tab-content {
+    border-radius: 1.95vw;
+  }
+  .sf-filter-one-heading {
+    color: #fff;
+    background-color: #555;
+  }
+  .sf-filter-one-heading h3,
+  .sf-filter-one-column-six h5,
+  .sf-filter-one-column-six p {
+    color: #000;
+  }
+  .sf-fo-column-two-row-one h5, 
+  .sf-fo-column-three-row-one h5, 
+  .sf-fo-column-four-row-one h5, 
+  .sf-fo-column-five-row-one h5,
+  .sf-fo-column-six-row-one h5 {
+    font-size: 1rem;
+    padding: 0 0 0 1rem;
+  }
+
+  .sf-filter-one-column-two,
+  .sf-filter-one-column-three,
+  .sf-filter-one-column-four,
+  .sf-filter-one-column-five,
+  .sf-filter-one-column-six {
+    height: 75px;
+    border: 0 !important;
+  }
+
+  .sf-filter-one-heading h3 {
+    font-size: 1rem;
+  }
+}
