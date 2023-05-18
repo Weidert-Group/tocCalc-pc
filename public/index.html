@@ -98,7 +98,7 @@
                     </div>
                     <div class="st-filter-one-input">
                       <div class="st-filter-one-input-inner dollor">
-                        <input type="number" id="filter-1-price" name="filter-one-price" oninput="fetch_cost();fetch_cost_new();maintenanceSavings();"  min="0" step="0.01">
+                        <input type="number" id="filter-1-price" name="filter-one-price" oninput="fetch_cost();"  min="0" step="0.01">
                       </div>
                     </div>
                   </div>
@@ -368,7 +368,7 @@
                 </div>
                 <div class="annual-fleet">
                   <h4>Annual Fleet Savings</h4>
-                  <p id="annual_fleet_savings" oninput="maintenanceSavings()" ></p>
+                  <p id="annual_fleet_savings"></p>
                 </div>
                 <div class="lc-fleet">
                   <h4>Life Cycle Fleet Savings</h4>
@@ -411,7 +411,7 @@
                   </div>
                   <div class="st-filter-one-input">
                     <div class="st-filter-one-input-inner">
-                      <input class="zero-decimal" type="number" id="filter-1-price-three" name="filter-one-price" placeholder="#" oninput="change_thrid_screen();fetch_cost_new();" >
+                      <input class="zero-decimal" type="number" id="filter-1-price-three" name="filter-one-price" placeholder="#" oninput="change_thrid_screen();fetch_cost_new();maintenanceSavings();" >
                     </div>
                   </div>
                 </div>
@@ -427,7 +427,7 @@
                   </div>
                   <div class="st-filter-one-input">
                     <div class="st-filter-one-input-inner">
-                      <input class="zero-decimal" type="number" id="filter-1-fleet-size-three" name="filter-one-fleet-size" placeholder="#" oninput="change_thrid_screen();" >
+                      <input class="zero-decimal" type="number" id="filter-1-fleet-size-three" name="filter-one-fleet-size" placeholder="#" oninput="change_thrid_screen();maintenanceSavings();" >
                     </div>
                   </div>
                 </div>
@@ -774,7 +774,7 @@
             </div>                    
             <div class="one-column">
               <label for="country">Country:</label>
-              <input type="text" id="country" name="address1_country" required>
+              <input type="text" id="country" name="itw01_address1_country" required>
             </div>       
             <div class="one-column">
               <label for="phone-number">Phone Number:</label>
@@ -784,7 +784,6 @@
               <input type="submit" value="VIEW DETAILED SUMMARY ❯" class="button yellow">
             </div>
           </form>        
-          <!-- <iframe src="https://millerwelds.az1.qualtrics.com/jfe/form/SV_23PtacSKPKH3vG6" height="800px" width="500px" loading="lazy"></iframe> -->
         </div>
       </div>
       <div class="popup" id="sales-form-message">
@@ -870,7 +869,6 @@
       }
 
     </script>
-    <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.js"></script>
     <script src="Script.js"></script>
   </body>
 </html>

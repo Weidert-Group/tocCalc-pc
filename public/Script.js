@@ -229,12 +229,13 @@ function fetch_cost() {
   }
   // int_annual_fleet_savings
   let int_annual_fleet_savings = int_enpak_truck_savings * fleet_size;
+  console.log({int_annual_fleet_savings});
   if (!isNaN(int_annual_fleet_savings)) {
     document.getElementById("annual_fleet_savings").innerText = int_annual_fleet_savings;
   }
   // int_annual_fleet_savings ends
   let annual_fleet_savings = enpak_truck_savings * fleet_size;
-  if (!isNaN(int_annual_fleet_savings)) {
+  if (!isNaN(annual_fleet_savings)) {
     document.getElementById("annual_fleet_savings").innerText = annual_fleet_savings.toLocaleString();
   }
   let cts_value = document.getElementById("filter-2-life-cycle-ts").value;
@@ -267,8 +268,9 @@ function fetch_cost_new() {
     document.getElementById("enpak-savings").innerText = enpak_truck_savings_new.toLocaleString();
     document.getElementById("annual_savings").innerText = enpak_truck_savings_new.toLocaleString();
   }
-  let annual_fleet_savings_new = enpak_truck_savings_new * fleet_size_new;
-  if (!isNaN(annual_fleet_savings_new)&&!isFinite(annual_fleet_savings_new)) {
+  let annual_fleet_savings_new = enpak_truck_savings_new * fleet_size_new;    
+  console.log({annual_fleet_savings_new});
+  if (!isNaN(annual_fleet_savings_new)) {
     document.getElementById("annual_fleet_savings").innerText = annual_fleet_savings_new.toLocaleString();
   }
   let cts_value_new = document.getElementById("filter-2-life-cycle-ts").value;
@@ -290,7 +292,7 @@ function fetch_cost_new() {
     if (!isFinite(paybackFuelSavings)) {
       paybackFuelSavings = 0;
     }
-    document.getElementById("pay-year").innerText = paybackFuelSavings.toFixed(0);
+    document.getElementById("pay-year").innerText = paybackFuelSavings.toFixed(1);
   }
   // detail summary
   // converting to int
@@ -483,7 +485,7 @@ function maintenanceSavings() {
   let new_con_purchase = toNumber(document.getElementById("filter-2-purchase-price-ts").value);
   let new_payback_maintenance = (new_enpack_purchase - new_con_purchase) / new_main_annual_savings;
   if (!isNaN(new_payback_maintenance)) {
-    document.getElementById("pay-fuel").innerHTML = new_payback_maintenance.toFixed(0);
+    document.getElementById("pay-fuel").innerHTML = new_payback_maintenance.toFixed(1);
   }
   // payback maintenance ends----------------->
   // new formula interval hours starts------------------------------------------------------------------------------------->
@@ -700,20 +702,21 @@ document.querySelectorAll('.st-filter-two-inner input').forEach((input) => {
 function submitForm(form) {
   console.log({form});
   let formData = new FormData(form);
-  // let payload = formatCalcData(); 
   let payload = {};
+  payload = formatCalcData();
   for (const [key, value] of formData.entries()) {
     payload[key] = value; // add the form field key-value pair to the object
   }
-  // payload['itw01_pwp_lead_source_detail'] = 'TOC Calculator'; // Add detail property
-  // payload['campaignid'] = '1cf49723-a82f-ed11-9db1-000d3a59f13d GUID'; // Add campaignid property
+  payload['itw01_pwp_lead_source_detail'] = 'TOC Calculator'; // Add detail property
+  // payload['campaignid'] = {GUID: '1cf49723-a82f-ed11-9db1-000d3a59f13d'}; // Add campaignid property
+  // payload['campaignid'] = '1cf49723-a82f-ed11-9db1-000d3a59f13d'; // Add campaignid property
   if (form.id == 'sales-form') { // If form is sales form
     payload['leadqualitycode'] = '1'; // Add leadqualitycode property
   }
   let payloadString = JSON.stringify(payload);
   console.log(payloadString, typeof payloadString);
 
-  fetch('/submit', {
+  fetch('/enpak/submit', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -724,26 +727,26 @@ function submitForm(form) {
 
 // Get calculation data from detail tab
 function formatCalcData() {
-  let new_sk_fuelsavingsannualpertruck = document.getElementById('de_fuel_annual_save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_fuelsavingsannualfleet = document.getElementById('de_fuel_annual_fleet_save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_fuelsavingslifecycle = document.getElementById('de_fuel_ife-save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_fuelsavingspayback = document.getElementById('de_fuel_payback').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_maintenancesavingsannualpertruck = document.getElementById('de_main_annual_save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_maintenancesavingsannualfleet = document.getElementById('de_main_fleet_annual_save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_skmaintenancesavingslifecycle = document.getElementById('de_main_life-save').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_maintenancesavingspayback = document.getElementById('de_main_payback').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_operationalsavingsannualpertruck = document.getElementById('total_annual_savings').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_operationalsavingsannualfleet = document.getElementById('total-fleet_savings').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_operationalsavingslifecycle = document.getElementById('total_life_savings').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_operationalsavingspayback = document.getElementById('total_payback_year').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_lifeextensionsavingsannualpertruck = document.getElementById('assest_annual_per_result').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_lifeextensionsavingsannualfleet = document.getElementById('assest-annual_fleet_size_calc').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_lifeextensionsavingslifecycle = document.getElementById('assest_life_cycle_row').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_lifeextensionsavingspayback = document.getElementById('assest_payback_year').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_totalsavingsannualpertruck = document.getElementById('pot_annual_save_truck').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_totalsavingsannualfleet = document.getElementById('pot_annual_save_fleet').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_totalsavingslifecycle = document.getElementById('pot_life_savings').innerHTML.replace('<b>','').replace('</b>','');
-  let new_sk_totalsavingspayback = document.getElementById('pot_pay_year').innerHTML.replace('<b>','').replace('</b>','');
+  let new_sk_fuelsavingsannualpertruck = Number(document.getElementById('de_fuel_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_fuelsavingsannualfleet = Number(document.getElementById('de_fuel_annual_fleet_save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_fuelsavingslifecycle = Number(document.getElementById('de_fuel_ife-save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_fuelsavingspayback = Number(document.getElementById('de_fuel_payback').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_maintenancesavingsannualpertruck = Number(document.getElementById('de_main_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_maintenancesavingsannualfleet = Number(document.getElementById('de_main_fleet_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_skmaintenancesavingslifecycle = Number(document.getElementById('de_main_life-save').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_maintenancesavingspayback = Number(document.getElementById('de_main_payback').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_operationalsavingsannualpertruck = Number(document.getElementById('total_annual_savings').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_operationalsavingsannualfleet = Number(document.getElementById('total-fleet_savings').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_operationalsavingslifecycle = Number(document.getElementById('total_life_savings').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_operationalsavingspayback = Number(document.getElementById('total_payback_year').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_lifeextensionsavingsannualpertruck = Number(document.getElementById('assest_annual_per_result').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_lifeextensionsavingsannualfleet = Number(document.getElementById('assest-annual_fleet_size_calc').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_lifeextensionsavingslifecycle = Number(document.getElementById('assest_life_cycle_row').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_lifeextensionsavingspayback = Number(document.getElementById('assest_payback_year').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_totalsavingsannualpertruck = Number(document.getElementById('pot_annual_save_truck').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_totalsavingsannualfleet = Number(document.getElementById('pot_annual_save_fleet').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_totalsavingslifecycle = Number(document.getElementById('pot_life_savings').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_totalsavingspayback = Number(document.getElementById('pot_pay_year').innerHTML.replace('<b>','').replace('</b>',''));
   let calcData = {
     new_sk_fuelsavingsannualpertruck: new_sk_fuelsavingsannualpertruck,
     new_sk_fuelsavingsannualfleet: new_sk_fuelsavingsannualfleet,
