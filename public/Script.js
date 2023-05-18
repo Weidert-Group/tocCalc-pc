@@ -705,11 +705,15 @@ function submitForm(form) {
   let payload = {};
   payload = formatCalcData();
   for (const [key, value] of formData.entries()) {
-    payload[key] = value; // add the form field key-value pair to the object
+    console.log(key, value);
+    if (key == 'itw01_address1country') {
+      payload['itw01_Address1_Country@odata.bind'] = `/itw01_countries(` + value + `)`;
+    } else {
+      payload[key] = value; // add the form field key-value pair to the object
+    }
   }
   payload['itw01_pwp_lead_source_detail'] = 'TOC Calculator'; // Add detail property
-  // payload['campaignid'] = {GUID: '1cf49723-a82f-ed11-9db1-000d3a59f13d'}; // Add campaignid property
-  // payload['campaignid'] = '1cf49723-a82f-ed11-9db1-000d3a59f13d'; // Add campaignid property
+  payload['campaignid@odata.bind'] = '/campaigns(1cf49723-a82f-ed11-9db1-000d3a59f13d)'; // Add campaignid property
   if (form.id == 'sales-form') { // If form is sales form
     payload['leadqualitycode'] = '1'; // Add leadqualitycode property
   }

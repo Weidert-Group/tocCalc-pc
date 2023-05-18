@@ -1702,8 +1702,10 @@ form .one-column {
   margin-bottom: 1rem;
 }
 
-form .one-column input {
+form .one-column input,
+form .one-column select {
   width: 70%;
+  box-sizing:content-box;
 }
 
 form .two-column {
@@ -1713,7 +1715,8 @@ form .two-column {
   margin-bottom: 1rem;
 }
 
-form input {
+form input,
+form select {
   background-color: #dae1e4;
   border: none;
   padding: 0.75rem;
