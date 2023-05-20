@@ -706,37 +706,37 @@ function submitForm(form) {
   let payloadString = JSON.stringify(payload);
   console.log(payloadString, typeof payloadString);
 
-  // fetch('/enpak/submit', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: payloadString
-  // })
+  fetch('/enpak/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: payloadString
+  })
 }
 
 // Get calculation data from detail tab
 function formatCalcData() {
-  let new_sk_fuelsavingsannualpertruck = Number(document.getElementById('de_fuel_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_fuelsavingsannualfleet = Number(document.getElementById('de_fuel_annual_fleet_save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_fuelsavingslifecycle = Number(document.getElementById('de_fuel_ife-save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_fuelsavingspayback = Number(document.getElementById('de_fuel_payback').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_maintenancesavingsannualpertruck = Number(document.getElementById('de_main_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_maintenancesavingsannualfleet = Number(document.getElementById('de_main_fleet_annual_save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_skmaintenancesavingslifecycle = Number(document.getElementById('de_main_life-save').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_maintenancesavingspayback = Number(document.getElementById('de_main_payback').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_operationalsavingsannualpertruck = Number(document.getElementById('total_annual_savings').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_operationalsavingsannualfleet = Number(document.getElementById('total-fleet_savings').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_operationalsavingslifecycle = Number(document.getElementById('total_life_savings').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_operationalsavingspayback = Number(document.getElementById('total_payback_year').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_lifeextensionsavingsannualpertruck = Number(document.getElementById('assest_annual_per_result').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_lifeextensionsavingsannualfleet = Number(document.getElementById('assest-annual_fleet_size_calc').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_lifeextensionsavingslifecycle = Number(document.getElementById('assest_life_cycle_row').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_lifeextensionsavingspayback = Number(document.getElementById('assest_payback_year').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_totalsavingsannualpertruck = Number(document.getElementById('pot_annual_save_truck').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_totalsavingsannualfleet = Number(document.getElementById('pot_annual_save_fleet').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_totalsavingslifecycle = Number(document.getElementById('pot_life_savings').innerHTML.replace('<b>','').replace('</b>',''));
-  let new_sk_totalsavingspayback = Number(document.getElementById('pot_pay_year').innerHTML.replace('<b>','').replace('</b>',''));
+  let new_sk_fuelsavingsannualpertruck = Number(document.getElementById('de_fuel_annual_save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_fuelsavingsannualfleet = Number(document.getElementById('de_fuel_annual_fleet_save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_fuelsavingslifecycle = Number(document.getElementById('de_fuel_ife-save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_fuelsavingspayback = Number(document.getElementById('de_fuel_payback').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_maintenancesavingsannualpertruck = Number(document.getElementById('de_main_annual_save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_maintenancesavingsannualfleet = Number(document.getElementById('de_main_fleet_annual_save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_skmaintenancesavingslifecycle = Number(document.getElementById('de_main_life-save').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_maintenancesavingspayback = Number(document.getElementById('de_main_payback').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_operationalsavingsannualpertruck = Number(document.getElementById('total_annual_savings').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_operationalsavingsannualfleet = Number(document.getElementById('total-fleet_savings').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_operationalsavingslifecycle = Number(document.getElementById('total_life_savings').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_operationalsavingspayback = Number(document.getElementById('total_payback_year').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_lifeextensionsavingsannualpertruck = Number(document.getElementById('assest_annual_per_result').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_lifeextensionsavingsannualfleet = Number(document.getElementById('assest-annual_fleet_size_calc').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_lifeextensionsavingslifecycle = Number(document.getElementById('assest_life_cycle_row').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_lifeextensionsavingspayback = Number(document.getElementById('assest_payback_year').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_totalsavingsannualpertruck = Number(document.getElementById('pot_annual_save_truck').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_totalsavingsannualfleet = Number(document.getElementById('pot_annual_save_fleet').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_totalsavingslifecycle = Number(document.getElementById('pot_life_savings').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
+  let new_sk_totalsavingspayback = Number(document.getElementById('pot_pay_year').innerHTML.replace('<b>','').replace('</b>','').replace(/,/g, ''));
   let calcData = {
     new_sk_fuelsavingsannualpertruck: new_sk_fuelsavingsannualpertruck,
     new_sk_fuelsavingsannualfleet: new_sk_fuelsavingsannualfleet,
