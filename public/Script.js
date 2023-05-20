@@ -28,12 +28,6 @@ $(document).ready(function () {
   summaryButton.addEventListener('click', function() {
     summaryForm.classList.add("active");
   });
-  let salesButton = document.getElementById('sales-form-button');
-  salesButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    salesFormMessage.classList.add("active");
-    secondSubmit(e);
-  });
   let closeButtons = document.getElementsByClassName("close-popup");
   for (let i = 0; i < closeButtons.length; i++) {
     closeButtons[i].addEventListener("click", function (e) {
@@ -147,14 +141,6 @@ $(document).ready(function () {
       .hide();
     document.querySelector('.tab4').classList.remove('tab-active');
     document.querySelector('.tab5').classList.add('tab-active');
-    return true;
-  }
-
-
-  function secondSubmit(e) {
-    const salesForm = document.getElementById('sales-form');
-    e.preventDefault();
-    submitForm(salesForm);
     return true;
   }
 
@@ -720,13 +706,13 @@ function submitForm(form) {
   let payloadString = JSON.stringify(payload);
   console.log(payloadString, typeof payloadString);
 
-  fetch('/enpak/submit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: payloadString
-  })
+  // fetch('/enpak/submit', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: payloadString
+  // })
 }
 
 // Get calculation data from detail tab
