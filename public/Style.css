@@ -1040,10 +1040,11 @@ body {
 .sf-fo-column-six-row-four {
   background-color: #007f3b;
 }
-/* .sf-fo-column-four-row-two:after,
+.sf-fo-column-four-row-two:after,
 .sf-fo-column-four-row-three:after,
-.sf-fo-column-four-row-four:after,
-.sf-fo-column-four-row-five:after {
+.sf-fo-column-four-row-four:after
+/* ,.sf-fo-column-four-row-five:after  */
+{
   content: "+";
   color: #00833d;
   font-size: 1rem;
@@ -1053,7 +1054,7 @@ body {
   position: absolute;
   left: 48%;
   bottom: -1.4vh;
-} */
+}
 
 .sf-fo-column-four-row-two,
 .sf-fo-column-four-row-three,
