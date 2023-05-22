@@ -537,7 +537,7 @@ function maintenanceSavings() {
   let new_op_con_purchase = document.getElementById("filter-2-purchase-price-ts").value;
   let new_op_enpack_purchase = document.getElementById("filter-2-purchase-price-te").value;
   let new_de_tot_payback = (toNumber(new_op_enpack_purchase) - toNumber(new_op_con_purchase)) / new_tot_of_annual_save;
-  document.getElementById("total_payback_year").innerText = new_de_tot_payback.toFixed(0);
+  document.getElementById("total_payback_year").innerText = new_de_tot_payback.toFixed(1);
   document.getElementsByName('operational-savings__payback').forEach((value) => value.value = new_de_tot_payback.toFixed(0));
   // details payback year ends----->
 
@@ -575,7 +575,7 @@ function maintenanceSavings() {
 
   // assest payback years starts----------------->
   let assest_tot_pay_year = (toNumber(assest_op_enp_puchase) - toNumber(asset_op_con_purchase)) / assest_life_total_annual_save;
-  document.getElementById("assest_payback_year").innerHTML = assest_tot_pay_year.toFixed(0);
+  document.getElementById("assest_payback_year").innerHTML = assest_tot_pay_year.toFixed(1);
   document.getElementsByName('life-extension-savings__payback').forEach((value) => value.value = assest_tot_pay_year.toFixed(0));
   // assest payback years ends --------------->
   // ----------------------------assest life insurance ends------------------->
@@ -602,7 +602,7 @@ function maintenanceSavings() {
 
   // tot pot payback starts------->
   let pot_tot_pay_years = (toNumber(assest_op_enp_puchase) - toNumber(asset_op_con_purchase)) / tot_pot_annual_savings;
-  document.getElementById("pot_pay_year").innerHTML = pot_tot_pay_years.toFixed(0);
+  document.getElementById("pot_pay_year").innerHTML = pot_tot_pay_years.toFixed(1);
   document.getElementsByName('total-savings__payback').forEach((value) => pot_tot_pay_years.toFixed(0));
   // tot pot payback ends------->
   // ----------- total potenetional ends-------------------->
