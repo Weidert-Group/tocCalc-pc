@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let formSubmitted = false;
+  let formSubmitted = true;
   let summaryForm = document.getElementById("summary-form");
   let salesFormMessage = document.getElementById("sales-form-message");
   $(".calculator-tab-content #filter-tab").hide();
@@ -149,32 +149,20 @@ $(document).ready(function () {
 
 function fetch_cost() {
   // trail operation fuel comma-------->
-  let op_purchase_fuel_enpack = document.getElementById(
-    "filter-2-purchase-price-ts"
-  ).value;
-  document.getElementById("filter-2-purchase-price-ts").value = toStrg(
-    op_purchase_fuel_enpack
-  );
+  let op_purchase_fuel_enpack = document.getElementById("filter-2-purchase-price-ts").value;
+  document.getElementById("filter-2-purchase-price-ts").value = toStrg(op_purchase_fuel_enpack);
   // convention truck---->
   let op_purchase_fuel_conven = document.getElementById("filter-2-purchase-price-te").value;
   document.getElementById("filter-2-purchase-price-te").value = toStrg(op_purchase_fuel_conven);
   // end of life enpack---->
   let op_enpack_end_life = document.getElementById("filter-2-end-of-life-te").value;
-  document.getElementById("filter-2-end-of-life-te").value =
-    toStrg(op_enpack_end_life);
-  let op_conven_end_life = document.getElementById(
-    "filter-2-end-of-life-ts"
-  ).value;
-  document.getElementById("filter-2-end-of-life-ts").value =
-    toStrg(op_conven_end_life);
+  document.getElementById("filter-2-end-of-life-te").value = toStrg(op_enpack_end_life);
+  let op_conven_end_life = document.getElementById("filter-2-end-of-life-ts").value;
+  document.getElementById("filter-2-end-of-life-ts").value = toStrg(op_conven_end_life);
   // trail operation fuel comma ends-------->
   let fuel_cost = parseFloat(document.getElementById("filter-1-price").value);
-  let operating_days = parseFloat(
-    document.getElementById("filter-1-days").value
-  );
-  let fleet_size = parseFloat(
-    document.getElementById("filter-1-fleet-size").value
-  );
+  let operating_days = parseFloat(document.getElementById("filter-1-days").value);
+  let fleet_size = parseFloat(document.getElementById("filter-1-fleet-size").value);
   document.getElementById("filter-1-price-two").value = fuel_cost.toFixed(2);
   document.getElementById("filter-1-days-two").value = operating_days.toFixed(0);
   document.getElementById("filter-1-fleet-size-two").value = fleet_size.toFixed(0);
@@ -658,13 +646,10 @@ for (let i = 0; i < zeroInput.length; i++) {
 document.querySelectorAll('.st-filter-two-inner input').forEach((input) => {
   input.addEventListener('input', function(e) {
     let value = e.target.value.replace(/,/g, '');
-    console.log(typeof value);
-    console.log(value);
     let numberValue = parseFloat(value);
-    console.log({numberValue});
 
     if (e.target.id == 'filter-2-purchase-price-ts') {
-      document.getElementById('filter-2-purchase-price-te').value = (numberValue + 25000).toLocaleString();
+      document.getElementById('filter-2-purchase-price-te').value = (numberValue + 20000).toLocaleString();
     }
     if (e.target.id == 'filter-2-end-of-life-ts') {
       document.getElementById('filter-2-end-of-life-te').value = (numberValue + 5000).toLocaleString();
@@ -673,7 +658,7 @@ document.querySelectorAll('.st-filter-two-inner input').forEach((input) => {
       document.getElementById('filter-2-life-cycle-te').value = (numberValue + 3).toLocaleString();
     }
     if (e.target.id == 'filter-2-purchase-price-te') {
-      document.getElementById('filter-2-purchase-price-ts').value = (numberValue - 25000).toLocaleString();
+      document.getElementById('filter-2-purchase-price-ts').value = (numberValue - 20000).toLocaleString();
     }
     if (e.target.id == 'filter-2-end-of-life-te') {
       document.getElementById('filter-2-end-of-life-ts').value = (numberValue - 5000).toLocaleString();
