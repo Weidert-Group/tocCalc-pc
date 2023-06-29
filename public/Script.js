@@ -378,7 +378,7 @@ function maintenanceSavings() {
   let con_pre_cost = toNumber(document.getElementById("preventive_main_cost").value);
   let con_emission_cost = toNumber(document.getElementById("emissions_equipment").value);
 
-  let con_total_main_cost_idle = (( duration * operating_days) / con_pre_interval_hours) * con_pre_cost + (( duration * operating_days )/  con_emission_interval_hours) * con_emission_cost ;
+  let con_total_main_cost_idle = (( duration * operating_days) / con_pre_interval_hours) * con_pre_cost + (( duration * operating_days ) /  con_emission_interval_hours) * con_emission_cost ;
   
   console.log('(Duration:' + duration + '* Operating Days:' + operating_days + ')/(Preventive Interval:' + con_pre_interval_hours + ') * Preventive Cost:' + con_pre_cost + ' + (Duration:' + duration + ' * Operating Days:' + operating_days + ')/(Emission Interval:' + con_emission_interval_hours + ') * Emission Cost:' + con_emission_cost + ' = ' + con_total_main_cost_idle);
 
@@ -391,9 +391,7 @@ function maintenanceSavings() {
 
   // Enpack Maintence cost values---->
   let enpack_pre_interval_hour = toNumber(document.getElementById("enpack_preventive_main_interval").value);
-  let enpack_emission_interval_hour = toNumber(document.getElementById("enpack_emi_interval_hour").value);
   let enpack_pre_cost = toNumber(document.getElementById("enpack_main_cost").value);
-  let enpack_emi_cost = toNumber(document.getElementById("enpack_emission_cost").value);
   let enpak_duration = toNumber(document.getElementById("enpak-duration").value);
 
   let enpack_total_cost_idle = (( enpak_duration * operating_days) / enpack_pre_interval_hour) * enpack_pre_cost;
