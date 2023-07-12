@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let formSubmitted = true;
+  let formSubmitted = false;
   let summaryForm = document.getElementById("summary-form");
   let salesFormMessage = document.getElementById("sales-form-message");
   $(".calculator-tab-content #filter-tab").hide();
