@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let formSubmitted = false;
+  let formSubmitted = true;
   let summaryForm = document.getElementById("summary-form");
   let salesFormMessage = document.getElementById("sales-form-message");
   $(".calculator-tab-content #filter-tab").hide();
@@ -26,7 +26,16 @@ $(document).ready(function () {
   }
   let summaryButton = document.getElementById('detailed-summmary');
   summaryButton.addEventListener('click', function() {
-    summaryForm.classList.add("active");
+    if (formSubmitted == false) {
+      summaryForm.classList.add("active");
+    } else {
+      document.querySelector('.tab4').classList.remove('tab-active');
+      document.querySelector('.tab5').classList.add('tab-active');
+      $(".calculator-tab-content  #filter-tab[class='tab5']")
+        .show()
+        .siblings()
+        .hide();
+    }
   });
   let closeButtons = document.getElementsByClassName("close-popup");
   for (let i = 0; i < closeButtons.length; i++) {
@@ -641,31 +650,31 @@ for (let i = 0; i < zeroInput.length; i++) {
 }
 
 // Update Purchase Price/End of Life/Life Cycles
-document.querySelectorAll('.st-filter-two-inner input').forEach((input) => {
-  input.addEventListener('input', function(e) {
-    let value = e.target.value.replace(/,/g, '');
-    let numberValue = parseFloat(value);
+// document.querySelectorAll('.st-filter-two-inner input').forEach((input) => {
+//   input.addEventListener('input', function(e) {
+//     let value = e.target.value.replace(/,/g, '');
+//     let numberValue = parseFloat(value);
 
-    if (e.target.id == 'filter-2-purchase-price-ts') {
-      document.getElementById('filter-2-purchase-price-te').value = (numberValue + 20000).toLocaleString();
-    }
-    if (e.target.id == 'filter-2-end-of-life-ts') {
-      document.getElementById('filter-2-end-of-life-te').value = (numberValue + 5000).toLocaleString();
-    }
-    if (e.target.id == 'filter-2-life-cycle-ts') {
-      document.getElementById('filter-2-life-cycle-te').value = (numberValue + 3).toLocaleString();
-    }
-    if (e.target.id == 'filter-2-purchase-price-te') {
-      document.getElementById('filter-2-purchase-price-ts').value = (numberValue - 20000).toLocaleString();
-    }
-    if (e.target.id == 'filter-2-end-of-life-te') {
-      document.getElementById('filter-2-end-of-life-ts').value = (numberValue - 5000).toLocaleString();
-    }
-    if (e.target.id == 'filter-2-life-cycle-te') {
-      document.getElementById('filter-2-life-cycle-ts').value = (numberValue - 3).toLocaleString();
-    }
-  });
-});
+//     if (e.target.id == 'filter-2-purchase-price-ts') {
+//       document.getElementById('filter-2-purchase-price-te').value = (numberValue + 20000).toLocaleString();
+//     }
+//     if (e.target.id == 'filter-2-end-of-life-ts') {
+//       document.getElementById('filter-2-end-of-life-te').value = (numberValue + 5000).toLocaleString();
+//     }
+//     if (e.target.id == 'filter-2-life-cycle-ts') {
+//       document.getElementById('filter-2-life-cycle-te').value = (numberValue + 3).toLocaleString();
+//     }
+//     if (e.target.id == 'filter-2-purchase-price-te') {
+//       document.getElementById('filter-2-purchase-price-ts').value = (numberValue - 20000).toLocaleString();
+//     }
+//     if (e.target.id == 'filter-2-end-of-life-te') {
+//       document.getElementById('filter-2-end-of-life-ts').value = (numberValue - 5000).toLocaleString();
+//     }
+//     if (e.target.id == 'filter-2-life-cycle-te') {
+//       document.getElementById('filter-2-life-cycle-ts').value = (numberValue - 3).toLocaleString();
+//     }
+//   });
+// });
 
 // Submit form and calc data
 function submitForm(form) {
