@@ -38,6 +38,15 @@ $(document).ready(function () {
       }
     })
   }
+
+  let summaryButton = document.getElementById('detailed-summmary');
+  summaryButton.addEventListener('click', function() {
+    console.log('summary button clicked');
+    document.querySelector('.tab4').classList.remove('tab-active');
+    document.querySelector('.tab5').classList.add('tab-active');
+    document.querySelector('#filter-tab.tab4').style.display = 'none';
+    document.querySelector('#filter-tab.tab5').style.display = '';
+  });
   
   $(".st-filter-two-truck-setup-extension").css(
     "min-height",
