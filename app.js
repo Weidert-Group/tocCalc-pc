@@ -47,5 +47,5 @@ router.post('/submit', (req, res) => {
 
 });
 
-app.use('/enpak/', router);
+app.use('/enpak-pc/', router);
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`));
